@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:icon="@drawable/name" android:title="Doan Thi Cam Nhung" android:id="@+id/itemName">
+    </item>
+    <item android:icon="@drawable/phone" android:title="0334558099" android:id="@+id/itemSdt">
+    </item>
+    <item android:icon="@drawable/email" android:title="quynhlam1411999@gmail.com" android:id="@+id/itemEmail">
+    </item>
+    <item android:icon="@drawable/information" android:title="Detail information" android:id="@+id/itemInfor">
+    </item>
+    <item android:icon="@drawable/history" android:title="History" android:id="@+id/itemHistory">
+    </item>
+    <item android:icon="@drawable/setting" android:title="Setting" android:id="@+id/itemSet">
+    </item>
+    <item android:icon="@drawable/help" android:title="Help" android:id="@+id/itemHelp">
+    </item>
+    <item android:icon="@drawable/logout" android:title="Log out" android:id="@+id/itemLogout">
+    </item>
+
+</menu>

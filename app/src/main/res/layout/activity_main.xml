@@ -53,9 +53,9 @@
             <ImageView
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/nhiem"
-                android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:src="@drawable/ava"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
 
         </LinearLayout>
 
@@ -100,8 +100,8 @@
 
             <Button
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                android:textSize="16sp"
+                android:layout_marginLeft="11dp"
+                android:textSize="17sp"
                 android:id="@+id/btnXemThem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,6 +124,14 @@
             android:layout_height="160dp"/>
 
     </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:menu="@menu/account"
+        android:layout_gravity="end"
+        app:headerLayout="@layout/head"
+        />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
