@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".MainActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#4b3832"
@@ -41,59 +41,74 @@
             android:padding="20dp"
             android:layout_marginBottom="40dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:text="Vui lòng điền đầy đủ thông tin bên dưới"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:text="Vui lòng điền đầy đủ thông tin bên dưới"
+                    android:textColor="#3c2f2f"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Họ và tên:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Họ và tên:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="VD: Nguyễn Bảo Phát"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="VD: Nguyễn Bảo Phát"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="VD: Baophatnguyen99@gmail.com"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Số điện thoại:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="VD: Baophatnguyen99@gmail.com"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Số điện thoại:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="356981631"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+
             <Button
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="center"
                 android:text="Đăng ký"
-                android:textSize="26dp"
-                android:gravity="bottom"
-                />
+                android:layout_marginTop="30dp"
+                android:textSize="26dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
