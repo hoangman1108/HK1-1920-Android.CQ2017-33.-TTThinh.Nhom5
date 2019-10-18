@@ -5,124 +5,26 @@
     android:layout_width="match_parent"
     android:id="@+id/drawerlayout"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:padding="0dp"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--Menu-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_marginRight="15dp"
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4">
-                <TextView
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="GUEST"
-                    android:textStyle="bold"
-                    android:textSize="30sp"
-                    android:gravity="end"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <SearchView
-                        android:id="@+id/searchviewMenu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <EditText
-                        android:id="@+id/edittext_search"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="25dp"
-                        android:hint="Search" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/ava"
-                android:layout_width="80dp"
-                android:layout_height="80dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_margin="40dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:textSize="17sp"
-                    android:id="@+id/btnDatHang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="#2196F3"
-                    android:text="Đặt Hàng"/>
-                <Button
-                    android:textSize="17sp"
-                    android:id="@+id/btnTichDiem"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="#2196F3"
-                    android:text="Tích Điểm"/>
-                <Button
-                    android:textSize="17sp"
-                    android:id="@+id/btnCoupon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="#2196F3"
-                    android:text="Coupon"/>
-            </LinearLayout>
-
-            <Button
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="11dp"
-                android:textSize="17sp"
-                android:id="@+id/btnXemThem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="#2196F3"
-                android:text="Xem Thêm"/>
-        </LinearLayout>
-
         <FrameLayout
-            android:layout_marginBottom="20sp"
-            android:background="#f777"
-            android:id="@+id/framelayout_monmoi"
+            android:id="@+id/fragment_container"
+            android:layout_weight="9"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="0dp"
+            />
 
-        <FrameLayout
-            android:background="#f444"
-            android:id="@+id/framelayout_tintuc"
-            android:layout_width="300dp"
-            android:layout_height="160dp"/>
-
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigationview"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:menu="@menu/navbar_menu"
+            />
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
