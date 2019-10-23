@@ -7,5 +7,10 @@
     <string name="tich_diem">Tich Diem</string>
     <string name="goi_y">Goi Y</string>
     <string name="description">Guest Image</string>
-    <string name="title_activity_maps">Dia chi</string>
+    <!--    <string name="title_activity_maps">Dia chi</string>-->
+    <string name="title_activity_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
