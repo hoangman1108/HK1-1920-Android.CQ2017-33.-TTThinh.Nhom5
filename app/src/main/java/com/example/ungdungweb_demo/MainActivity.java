@@ -8,13 +8,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
     Button btnmain;
-    Intent intent;
+    Fragment select = null;
+    NavigationView navigationView;
 
     ImageButton imgbtnmaps;
     @Override
@@ -34,19 +40,17 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigationview);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
-       // imgbtnmaps = (ImageButton) findViewById(R.id.btnDiaChi);
-
         Fragment fragmentfirst = new HomeFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragmentfirst).show(fragmentfirst).commit();
+
     }
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    Fragment select = null;
+
                     switch (menuItem.getItemId())
                     {
                         case R.id.itemHomeMain:
@@ -56,13 +60,8 @@ public class MainActivity extends AppCompatActivity {
                             select = new MenuMonFragment();
                             break;
                         case R.id.itemMap:
-//                          select = new MapsFragment();
-                            intent = new Intent(MainActivity.this, Maps.class);
-            //               Toast.makeText(mainActivity, "ra nào", Toast.LENGTH_SHORT).show();
-                            startActivity(intent);
+                            select = new BlankFragment();
                             break;
-                        default:
-                            throw new IllegalStateException("Unexpected value: " + menuItem.getItemId());
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, select).commit();
 
@@ -70,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
-
     public void Show() {
         HomeFragment homeFragment = (HomeFragment) this.getSupportFragmentManager().findFragmentById(R.id.fragment_container);
     }
+
+
 }
 
