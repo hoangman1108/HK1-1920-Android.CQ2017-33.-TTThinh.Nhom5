@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         case R.id.itemMap:
                             select = new BlankFragment();
                             break;
+                        case R.id.itemGioHang:
+                            select = new GioHangFragment();
+                            break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, select).commit();
 

@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/dialog_radioGroup_size">
         <RadioButton
+            android:checked="true"
             android:id="@+id/dialog_radio_vua"
             android:padding="5dp"
             android:layout_width="match_parent"
@@ -94,11 +95,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/dia_btn_mua_sub"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#FF0000"
             android:background="@drawable/sub"/>
         <TextView
+            android:id="@+id/dia_soluong"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -106,6 +109,7 @@
             android:textSize="30dp"
             android:textColor="#000000"/>
         <Button
+            android:id="@+id/dia_btn_mua_add"
             android:backgroundTint="#FF9800"
             android:layout_width="50dp"
             android:layout_height="50dp"

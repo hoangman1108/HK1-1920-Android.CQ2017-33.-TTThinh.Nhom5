@@ -4,4 +4,5 @@
     <item android:id="@+id/itemHomeMain" android:title="Home" android:icon="@drawable/home"/>
     <item android:id="@+id/itemHomeMenu" android:title="Menu" android:icon="@drawable/menu"/>
     <item android:id="@+id/itemMap" android:title="Maps" android:icon="@drawable/maps"/>
+    <item android:id="@+id/itemGioHang" android:title="Gio Hang" android:icon="@drawable/giohang"/>
 </menu>

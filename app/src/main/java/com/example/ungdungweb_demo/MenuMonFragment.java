@@ -43,11 +43,11 @@ public class MenuMonFragment extends ListFragment {
     }
 
     void AddData(){
-        monNuocArrayList.add(new MonNuoc("38.000","37000","Machiato Mango","Machiato co..."));
-        monNuocArrayList.add(new MonNuoc("41.000","35000","Black coffee","Milk coffee"));
-        monNuocArrayList.add(new MonNuoc("40.000","36000","Blue sky","Tropical stom"));
-        monNuocArrayList.add(new MonNuoc("55.000","39000","Hột é","Nước mía"));
-        monNuocArrayList.add(new MonNuoc("37.000","44000","cocain","red malboro"));
+        monNuocArrayList.add(new MonNuoc("38.000","37.000","Machiato Mango","Machiato co..."));
+        monNuocArrayList.add(new MonNuoc("41.000","35.000","Black coffee","Milk coffee"));
+        monNuocArrayList.add(new MonNuoc("40.000","36.000","Blue sky","Tropical stom"));
+        monNuocArrayList.add(new MonNuoc("55.000","39.000","Hột é","Nước mía"));
+        monNuocArrayList.add(new MonNuoc("37.000","44.000","cocain","red malboro"));
 
     }
 }
