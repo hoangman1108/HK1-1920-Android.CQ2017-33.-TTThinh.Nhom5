@@ -1,13 +1,20 @@
 package com.example.ungdungweb_demo;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,10 +50,11 @@ public class MonNuocAdapter extends BaseAdapter {
         ImageView imageView1, imageView2;
         TextView tvTenMon1, tvTenMon2;
         Button btnGia1, btnGia2;
+
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if(convertView == null){
             viewHolder = new ViewHolder();
@@ -58,6 +66,7 @@ public class MonNuocAdapter extends BaseAdapter {
             viewHolder.btnGia2 = (Button)convertView.findViewById(R.id.btnThemMon2);
             viewHolder.tvTenMon1 = (TextView)convertView.findViewById(R.id.tvTenMon1);
             viewHolder.tvTenMon2 = (TextView)convertView.findViewById(R.id.tvTenMon2);
+
             convertView.setTag(viewHolder);
         }
         else {
@@ -71,6 +80,55 @@ public class MonNuocAdapter extends BaseAdapter {
         viewHolder.tvTenMon2.setText(monNuoc.getTenMon2());
         viewHolder.btnGia1.setText(monNuoc.getGia1());
         viewHolder.btnGia2.setText(monNuoc.getGia2());
+
+
+
+        viewHolder.btnGia1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(context, "Gia "+position+"a", Toast.LENGTH_SHORT).show();
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.dialog_mua);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.setCanceledOnTouchOutside(true);
+
+
+
+                RadioButton radioButtonVua = dialog.findViewById(R.id.dialog_radio_vua);
+                RadioButton radioButtonLon = dialog.findViewById(R.id.dialog_radio_lon);
+                radioButtonVua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        Toast.makeText(context, "checked", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dialog.show();
+
+            }
+        });
+
+        viewHolder.btnGia2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(context, "Gia "+position+"b", Toast.LENGTH_SHORT).show();
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.dialog_mua);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.setCanceledOnTouchOutside(true);
+
+
+                RadioButton radioButtonVua = dialog.findViewById(R.id.dialog_radio_vua);
+                RadioButton radioButtonLon = dialog.findViewById(R.id.dialog_radio_lon);
+                radioButtonVua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        Toast.makeText(context, "checked", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dialog.show();
+            }
+        });
+
         return convertView;
     }
 }

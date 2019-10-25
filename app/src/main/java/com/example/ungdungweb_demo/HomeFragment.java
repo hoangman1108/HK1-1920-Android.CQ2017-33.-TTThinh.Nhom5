@@ -23,6 +23,7 @@ public class HomeFragment extends Fragment {
         imgbtnmaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                Toast.makeText(mainActivity, "Maps", Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent(mainActivity, Maps.class);
 //                Toast.makeText(mainActivity, "ra nào", Toast.LENGTH_SHORT).show();
 //                startActivity(intent);

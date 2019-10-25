@@ -2,19 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:background="#fae7d4"
+    android:padding="5dp"
     android:layout_height="match_parent">
 
    <ListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@android:id/list"/>
-<!--   <ListView-->
-<!--       android:layout_width="match_parent"-->
-<!--       android:layout_height="match_parent"-->
-<!--       android:id="@android:id/list"/>-->
-<!--   <com.google.android.gms.maps.MapView-->
-<!--       android:layout_height="300dp"-->
-<!--       android:layout_width="match_parent">-->
-
-<!--   </com.google.android.gms.maps.MapView>-->
 </LinearLayout>

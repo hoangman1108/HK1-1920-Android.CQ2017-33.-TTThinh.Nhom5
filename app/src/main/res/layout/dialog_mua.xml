@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/dia_bg"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ava"
+            android:id="@+id/dialog_imgviewCoffee"/>
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Machiato Blubery"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/dialog_tvTenmon"/>
+            <TextView
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50.000 đ"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/dialog_tvGia"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#000000"
+        android:background="#F0EAEA"
+        android:padding="5dp"
+        android:textSize="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Size"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_radioGroup_size">
+        <RadioButton
+            android:id="@+id/dialog_radio_vua"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="Vừa"/>
+
+
+
+        <RadioButton
+            android:id="@+id/dialog_radio_lon"
+            android:textSize="22sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lớn                     +5.000 đ"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:background="#F0EAEA"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Giới thiệu món"/>
+
+    <TextView
+
+        android:id="@+id/dialog_tvGioiThieu"
+        android:text="Macchiato hay còn được gọi là Caffe Macchiato hay Espresso Macchiato .Là loại cà phê Espresso có một lớp bọt sữa beo béo ở trên với hương vị mạnh mẽ hơn nhiều loại thức uống khác"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FF0000"
+            android:background="@drawable/sub"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="1"
+            android:textSize="30dp"
+            android:textColor="#000000"/>
+        <Button
+            android:backgroundTint="#FF9800"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/add_mon1"/>
+        <Button
+            android:layout_marginLeft="30dp"
+            android:id="@+id/dialog_btn_Mua"
+            android:background="@drawable/radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:textAllCaps="false"
+            android:text="50.000 đ"/>
+    </LinearLayout>
+
+</LinearLayout>
