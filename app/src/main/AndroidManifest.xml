@@ -49,6 +49,7 @@
         <!-- android:name=".MapsActivity" -->
         <!-- android:label="@string/title_activity_maps"></activity> -->
         <!-- <activity android:name=".Activity_Signup" /> -->
+        <activity android:name=".Detail_Info"></activity>
 
         <uses-library android:name="com.google.android.maps" />
 
