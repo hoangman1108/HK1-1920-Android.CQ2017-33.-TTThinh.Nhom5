@@ -25,7 +25,11 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static ArrayList<GioHang> gioHangArrayList = new ArrayList<>();
 
 
     private ActionBarDrawerToggle actionBarDrawerToggle;

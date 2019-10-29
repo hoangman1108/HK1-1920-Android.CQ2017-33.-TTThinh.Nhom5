@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,15 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
+
 import com.google.android.gms.common.server.converter.StringToIntConverter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MonNuocAdapter extends BaseAdapter {
+public class MonNuocAdapter extends BaseAdapter{
 
     private Context context;
     private int layout;
@@ -51,6 +55,7 @@ public class MonNuocAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return 0;
     }
+
 
     public class ViewHolder{
         ImageView imageView1, imageView2;
@@ -94,7 +99,7 @@ public class MonNuocAdapter extends BaseAdapter {
 //                Toast.makeText(context, "Gia "+position+"a", Toast.LENGTH_SHORT).show();
                 soluong = 1;
                 giagoc = "";
-                Dialog dialog = new Dialog(context);
+                final Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.dialog_mua);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.setCanceledOnTouchOutside(true);
@@ -102,12 +107,12 @@ public class MonNuocAdapter extends BaseAdapter {
                 final RadioButton radioButtonVua = dialog.findViewById(R.id.dialog_radio_vua);
                 final RadioButton radioButtonLon = dialog.findViewById(R.id.dialog_radio_lon);
                 Button btnsub = dialog.findViewById(R.id.dia_btn_mua_sub);
-                Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
+                final Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
                 final Button btnMua = dialog.findViewById(R.id.dialog_btn_Mua);
                 final TextView tvSoluong = dialog.findViewById(R.id.dia_soluong);
 
                 final TextView tvGia = dialog.findViewById(R.id.dialog_tvGia);
-                TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
+                final TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
 
                 tvTen.setText(viewHolder.tvTenMon1.getText());
                 tvGia.setText(viewHolder.btnGia1.getText());
@@ -138,6 +143,8 @@ public class MonNuocAdapter extends BaseAdapter {
                 btnMua.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong));
+                        dialog.dismiss();
                     }
                 });
 
@@ -178,9 +185,9 @@ public class MonNuocAdapter extends BaseAdapter {
         viewHolder.btnGia2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                giagoc = "";
                 soluong = 1;
-                Dialog dialog = new Dialog(context);
+                giagoc = "";
+                final Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.dialog_mua);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.setCanceledOnTouchOutside(true);
@@ -188,16 +195,16 @@ public class MonNuocAdapter extends BaseAdapter {
                 final RadioButton radioButtonVua = dialog.findViewById(R.id.dialog_radio_vua);
                 final RadioButton radioButtonLon = dialog.findViewById(R.id.dialog_radio_lon);
                 Button btnsub = dialog.findViewById(R.id.dia_btn_mua_sub);
-                Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
+                final Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
                 final Button btnMua = dialog.findViewById(R.id.dialog_btn_Mua);
                 final TextView tvSoluong = dialog.findViewById(R.id.dia_soluong);
+
                 final TextView tvGia = dialog.findViewById(R.id.dialog_tvGia);
-                TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
+                final TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
 
-                tvTen.setText(monNuoc.getTenMon2());
-                tvGia.setText(monNuoc.getGia2());
-                btnMua.setText(monNuoc.getGia2());
-
+                tvTen.setText(viewHolder.tvTenMon2.getText());
+                tvGia.setText(viewHolder.btnGia2.getText());
+                btnMua.setText(viewHolder.btnGia2.getText());
 
                 String temp = (String)tvGia.getText();
                 int i = 0;
@@ -224,7 +231,8 @@ public class MonNuocAdapter extends BaseAdapter {
                 btnMua.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong));
+                        dialog.dismiss();
                     }
                 });
 

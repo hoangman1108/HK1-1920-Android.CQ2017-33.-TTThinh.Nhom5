@@ -1,10 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@drawable/bg_round_corner"
+    android:id="@+id/fragment_giohang"
+    android:background="#C9F892"
     android:layout_height="match_parent">
     <ListView
+        android:layout_weight="9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@android:id/list"/>
+    <EditText
+        android:textColor="#f000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bạn muốn dặn dò gì không?"
+        android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#f000"
+            android:layout_weight="7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tạm tính"
+            android:textSize="20sp"/>
+        <TextView
+            android:textColor="#f000"
+            android:layout_weight="3"
+            android:id="@+id/tv_fragment_giohang_tongtien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="150.000 đ"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:background="#00000000"
+            android:textColor="#f000"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:text="55.000 đ"
+            android:textSize="28sp"
+            android:drawableTop="@drawable/tien"
+            android:paddingTop="5dp"/>
+        <Button
+            android:background="#00000000"
+            android:textColor="#f000"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:text="Mã giảm giá"
+            android:textSize="20sp"
+            android:drawableTop="@drawable/coupon"
+            android:paddingTop="5dp"/>
+    </LinearLayout>
+    <Button
+        android:padding="5dp"
+        android:id="@+id/btn_xacnhandachangfinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Xác nhận đặt hàng"/>
 </LinearLayout>
