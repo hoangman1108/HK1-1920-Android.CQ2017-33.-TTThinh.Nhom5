@@ -98,6 +98,10 @@ public class Detail_Info extends AppCompatActivity {
                 txtBirthday.setText(dialog_detail_birthday.getText());
                 txtEmail.setText(dialog_detail_email.getText());
                 txtPhone.setText(dialog_detail_phone.getText());
+
+                MainActivity.menu1.findItem(R.id.itemName).setTitle(txtName.getText());
+                MainActivity.menu1.findItem(R.id.itemEmail).setTitle(txtEmail.getText());
+                MainActivity.menu1.findItem(R.id.itemSdt).setTitle(txtPhone.getText());
                 if(radioButton_female.isChecked())
                 {
                     txtGender.setText(radioButton_female.getText());

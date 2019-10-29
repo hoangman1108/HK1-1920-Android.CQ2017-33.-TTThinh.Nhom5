@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".HelpActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHÍNH SÁCH BẢO MẬT"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#f000"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:textColor="#f00"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bảo mật thông tin"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Chúng tôi tôn trọng những thông tin cá nhân của bạn. Chúng tôi hiểu rằng bạn cần biết chúng tôi quản lí những thông tin cá nhân mà các bạn đã cung cấp như thế nào, hãy đọc và tìm hiểu những quy định bảo mật sau đây"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Việc bạn truy cập. đăng kí, sử dụng có nghĩa rằng bạn đồng ý và chấp nhận ràng buộc bởi điều khoản của bản quy định bảo mật của chúng tôi."
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="#f00"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:text="Tập hợp thông tin"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:text="App hoàn toàn miễn phí, bạn không cần phải cung cấp thông tin cá nhân. Chúng tôi chỉ yêu cầu các thông tin cá nhân như Tên, Email, Số điện thoại, và một số thông tin không bắt buộc khác. Các thông tin cá nhân này dùng để nhận dạng và liên hệ khi cần"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:textSize="24dp"
+        android:text="Lịch sử mua hàng"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Việc lưu trữ lịch sử mua hàng trong hệ thống giúp chúng tôi có thể đưa ra kết quả tìm kiếm lần sau của bạn chính xác"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:textSize="24dp"
+        android:text="Cách thức sử dụng"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Thông tin cá nhân của bạn không được chia sẻ với bất kì bên thứ 3 nào khi chưa có sự đồng ý của bạn nhưng chúng tôi có thể chia sẻ thông tin cho bên đối tác khi bạn đồng ý"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:textSize="24dp"
+        android:text="Sửa đổi và xóa thông tin tài khoản"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Bạn có thể sửa đổi cập nhật thông tin tài khoản của bạn bất cứ lúc nào. Cho dù bạn tự xóa các thông tin đó đi nhwung chúng tôi có thể phục hồi những thông tin đó từ cơ ở dữ liệu của chúng tôi để giải quyết các tranh chấp thi hành bản thỏa thuận người sử sụng hay vì các yêu cầu kĩ thuật pháp lí liên quan đến sự an toàn và nhwungx hoạt động của trang web chúng tôi"/>
+    </LinearLayout>
+</ScrollView>

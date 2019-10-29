@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Fragment select = null;
     NavigationView navigationView;
     Intent intent;
-    Menu menu1;
+    public static Menu menu1;
 
     ImageButton imgbtnmaps;
     @Override
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        menu1=navigationView.getMenu();
 //        FragmentManager fragmentManager = getSupportFragmentManager();
 //        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
@@ -63,12 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //           menu1.findItem(R.id.itemName).setTitle(name1);
 //       }
 
-        Menu menu1 = navigationView.getMenu();
-        LayoutInflater factory = getLayoutInflater();
-        View regisText = factory.inflate(R.layout.activity_detail__info, null);
-        TextView name1 = (TextView) regisText.findViewById(R.id.detail_name);
-        String usr = name1.getText().toString();
-        menu1.findItem(R.id.itemName).setTitle(usr);
 
 
         Fragment fragmentfirst = new HomeFragment();
@@ -113,23 +108,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()){
             case R.id.itemInfor:
-//                Menu menu=navigationView.getMenu();
-//                String name=(String)menu.findItem(R.id.itemName).getTitle();
-//                String phone=(String)menu.findItem(R.id.itemSdt).getTitle();
-//                String email=(String)menu.findItem(R.id.itemEmail).getTitle();
                 Intent intent=new Intent(this, Detail_Info.class);
-//                Bundle bundle=new Bundle();
-//                bundle.putString("name",name);
-//                bundle.putString("phone",phone);
-//                bundle.putString("email",email);
-//                intent.putExtra("infor",bundle);
                 startActivity(intent);
-
-
                 break;
             case R.id.itemHelp:
-                default:
-                    Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
+                Intent intent1=new Intent(this,HelpActivity.class);
+                startActivity(intent1);
+                break;
 
         }
 

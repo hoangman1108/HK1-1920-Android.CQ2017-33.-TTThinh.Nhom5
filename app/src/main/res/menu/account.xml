@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item android:icon="@drawable/name" android:title="Đoàn Thị Cẩm Nhung" android:id="@+id/itemName">
+    <item  android:icon="@drawable/name" android:title="Đoàn Thị Cẩm Nhung" android:id="@+id/itemName">
     </item>
     <item android:icon="@drawable/phone" android:title="0334558099" android:id="@+id/itemSdt">
     </item>
