@@ -36,11 +36,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     Button btnmain;
     Fragment select = null;
-    NavigationView navigationView;
+    public static NavigationView navigationView;
     Intent intent;
     public static Menu menu1;
 
-    ImageButton imgbtnmaps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,21 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        menu1=navigationView.getMenu();
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
-       // imgbtnmaps = (ImageButton) findViewById(R.id.btnDiaChi);
-
-//        Intent intent1 = getIntent();
-//        Bundle bundle1 = intent1.getBundleExtra("info1");
-//       if(!bundle1.isEmpty()){
-//           String name1 = bundle1.getString("name");
-//           menu1 = navigationView.getMenu();
-////        menu1.findItem(R.id.itemName).setTitle(bundle1.getString("name"));
-//           menu1.findItem(R.id.itemName).setTitle(name1);
-//       }
-
+//        menu1=navigationView.getMenu();
 
 
         Fragment fragmentfirst = new HomeFragment();

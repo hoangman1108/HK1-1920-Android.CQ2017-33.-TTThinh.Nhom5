@@ -52,8 +52,12 @@ public class BlankFragment extends Fragment implements OnMapReadyCallback {
         GoogleMap mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(10.735570, 106.689339);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng coffee1 = new LatLng(10.735570, 106.689339);
+        mMap.addMarker(new MarkerOptions().position(coffee1).title("Coffee house branch 1"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(coffee1));
+
+        LatLng coffee2 = new LatLng(10.762962, 106.682177);
+        mMap.addMarker(new MarkerOptions().position(coffee2).title("Coffee house branch 2"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(coffee2));
     }
 }
