@@ -51,6 +51,7 @@
             android:drawableTop="@drawable/tien"
             android:paddingTop="5dp"/>
         <Button
+            android:id="@+id/btn_fragment_giohang_giamgia"
             android:background="#00000000"
             android:textColor="#f000"
             android:gravity="center"

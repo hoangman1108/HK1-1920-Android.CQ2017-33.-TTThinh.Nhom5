@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v){
                 Intent intent = new Intent(mainActivity, LoginActivity.class);
                 startActivity(intent);
+//                mainActivity.finish();
                 mainActivity.finish();
             }
         });
@@ -67,6 +68,31 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        btnDatHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MainActivity.navigationView.setCheckedItem(R.id.itemHomeMenu);
+                Fragment fragment = new MenuMonFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).show(fragment).commit();
+            }
+        });
+
+        btnDiaChi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new MapsFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).show(fragment).commit();
+            }
+        });
+
+        btnCoupon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Coupon.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

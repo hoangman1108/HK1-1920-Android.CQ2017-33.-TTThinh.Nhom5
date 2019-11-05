@@ -1,5 +1,6 @@
 package com.example.ungdungweb_demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,7 @@ public class GioHangFragment extends ListFragment{
     GioHangAdapter adapter;
 
     TextView tvTongTien;
-    Button btnTongTien;
+    Button btnTongTien, btnGiamGia;
 
 
     @Nullable
@@ -29,11 +30,21 @@ public class GioHangFragment extends ListFragment{
 
         tvTongTien = view.findViewById(R.id.tv_fragment_giohang_tongtien);
         btnTongTien = view.findViewById(R.id.btn_fragment_giohang_tongtien);
+        btnGiamGia = view.findViewById(R.id.btn_fragment_giohang_giamgia);
         adapter = new GioHangAdapter(getActivity(),R.layout.dia_don_hang,MainActivity.gioHangArrayList);
 //        MainActivity.gioHangArrayList.add(new GioHang("Hồng trà mật ong","45.000 đ",1));
         setListAdapter(adapter);
         tvTongTien.setText(TongTien()+".000 đ");
         btnTongTien.setText(TongTien()+".000 đ");
+        btnGiamGia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Coupon.class);
+                startActivity(intent);
+            }
+        });
+
+
         return view;
     }
 
