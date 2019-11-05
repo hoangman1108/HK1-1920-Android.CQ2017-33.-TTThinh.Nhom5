@@ -50,22 +50,7 @@ public class Detail_Info extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//
-//
-//        LayoutInflater factory = getLayoutInflater();
-//        @SuppressLint("ResourceType") View regisText = factory.inflate(R.layout.activity_main, null);
-////        TextView name1 = (TextView) regisText.findViewById(R.id.etail_name);
-//        NavigationView navigationView = regisText.findViewById(R.id.nav_view);
-//        Menu menu2 = navigationView.getMenu();
-//        menu2.findItem(R.id.itemName).setTitle(txtName.getText());
-////        String usr = name1.getText().toString();
-////        menu1.findItem(R.id.itemName).setTitle(usr);
-//        finish();
-//
-//    }
+
 
     protected void ChangeInformation(){
 
