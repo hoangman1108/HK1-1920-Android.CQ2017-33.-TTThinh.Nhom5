@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,22 +19,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button btnClickSignup;
     private EditText account, pass;
 
-    ArrayList<UserInfor> userInforArrayList;
+    List<UserInfor> userInforList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
 
-        userInforArrayList = new ArrayList<>();
+        DatabaseHelper db = DatabaseHelper.getInstance(this);
 
-        userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123"));
+        userInforList = db.getAllUserInfor();
+
+        /*userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123"));
         userInforArrayList.add(new UserInfor("hello@gmail.com","0356981653","tototo123"));
         userInforArrayList.add(new UserInfor("alen@gmail.com","03569345653","tototo123"));
         userInforArrayList.add(new UserInfor("pro@gmail.com","0356933553","tototo123"));
         userInforArrayList.add(new UserInfor("vip@gmail.com","0356553653","tototo123"));
         userInforArrayList.add(new UserInfor("vippro123@gmail.com","0356981653","tototo123"));
-        userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123"));
+        userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123"));*/
 
 
         btnClick = findViewById(R.id.btnLogin);
@@ -66,11 +69,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public boolean checkLogin(String account, String pass)
     {
-        for (int i = 0; i < userInforArrayList.size(); i++)
+        for (int i = 0; i < userInforList.size(); i++)
         {
-            if (account.equals(userInforArrayList.get(i).getEmail()) || account.equals(userInforArrayList.get(i).getPhone()))
+            if (account.equals(userInforList.get(i).getEmail()) || account.equals(userInforList.get(i).getPhone()))
             {
-                if (pass.equals(userInforArrayList.get(i).getPassword()));
+                if (pass.equals(userInforList.get(i).getPassword()));
                 return true;
             }
         }
