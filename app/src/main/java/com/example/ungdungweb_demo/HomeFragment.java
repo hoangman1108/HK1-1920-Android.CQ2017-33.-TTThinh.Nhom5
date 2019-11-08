@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -22,6 +24,7 @@ public class HomeFragment extends Fragment {
     ImageButton btnDatHang, btnCoupon, btnTichDiem, btnDiaChi;
     private ImageView imgbtAva;
     public MainActivity mainActivity;
+    TextView tvName;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -30,17 +33,26 @@ public class HomeFragment extends Fragment {
         btnDiaChi = view.findViewById(R.id.btn_fragment_main_DiaChi);
         btnTichDiem = view.findViewById(R.id.btn_fragment_main_TichDiem);
 
+        tvName=view.findViewById(R.id.tv_fragment_main_name);
+
         imgbtAva = view.findViewById(R.id.imgAva);
 
-        imgbtAva.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(mainActivity, LoginActivity.class);
-                startActivity(intent);
+        if(MainActivity.index!=-1)
+        {
+            tvName.setText(MainActivity.userInforArrayList.get(MainActivity.index).getName());
+
+        }
+
+
+//        imgbtAva.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent intent = new Intent(mainActivity, LoginActivity.class);
+//                startActivity(intent);
+////                mainActivity.finish();
 //                mainActivity.finish();
-                mainActivity.finish();
-            }
-        });
+//            }
+//        });
 
         btnTichDiem.setOnClickListener(new View.OnClickListener() {
             @Override

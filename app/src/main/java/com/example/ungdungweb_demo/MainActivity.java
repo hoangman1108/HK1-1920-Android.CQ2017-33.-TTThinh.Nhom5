@@ -31,19 +31,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<GioHang> gioHangArrayList = new ArrayList<>();
 
+    public static ArrayList<UserInfor> userInforArrayList = new ArrayList<>();
+
+    public static int index=-1;
+
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
     Button btnmain;
     Fragment select = null;
-    public static NavigationView navigationView;
+    public static NavigationView navigationView ;
     Intent intent;
     public static Menu menu1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (index == -1) {
+            Intent intentA = new Intent(this, LoginActivity.class);
+            startActivity(intentA);
+        }
 
         //trang dể kết hiển thị các trang khác
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigationview);
@@ -52,7 +63,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-//        menu1=navigationView.getMenu();
+
+        menu1=navigationView.getMenu();
+        if(index!=-1) {
+            menu1.findItem(R.id.itemName).setTitle(userInforArrayList.get(index).getName());
+            menu1.findItem(R.id.itemSdt).setTitle(userInforArrayList.get(index).getPhone());
+            menu1.findItem(R.id.itemEmail).setTitle(userInforArrayList.get(index).getEmail());
+        }
 
 
         Fragment fragmentfirst = new HomeFragment();
@@ -97,12 +114,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()){
             case R.id.itemInfor:
+
                 Intent intent=new Intent(this, Detail_Info.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.itemHelp:
                 Intent intent1=new Intent(this,HelpActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.itemLogout:
+                index=-1;
+                Intent intent2=new Intent(this,LoginActivity.class);
+                startActivity(intent2);
+                finish();
                 break;
 
         }

@@ -18,22 +18,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button btnClickSignup;
     private EditText account, pass;
 
-    ArrayList<UserInfor> userInforArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        userInforArrayList = new ArrayList<>();
-
-        userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123"));
-        userInforArrayList.add(new UserInfor("hello@gmail.com","0356981653","tototo123"));
-        userInforArrayList.add(new UserInfor("alen@gmail.com","03569345653","tototo123"));
-        userInforArrayList.add(new UserInfor("pro@gmail.com","0356933553","tototo123"));
-        userInforArrayList.add(new UserInfor("vip@gmail.com","0356553653","tototo123"));
-        userInforArrayList.add(new UserInfor("vippro123@gmail.com","0356981653","tototo123"));
-        userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123"));
+        MainActivity.userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123","Nguyễn Hoàng Mẫn","11/08/1980","Female"));
+        MainActivity.userInforArrayList.add(new UserInfor("hello@gmail.com","0356981653","tototo123","Nguyễn Văn văn","1/1/1999","Male"));
+        MainActivity.userInforArrayList.add(new UserInfor("alen@gmail.com","03569345653","tototo123","Cao Văn Lầu","11/1/1999","Male"));
+        MainActivity.userInforArrayList.add(new UserInfor("pro@gmail.com","0356933553","tototo123","Nguyễn Văn B","12/1/1999","Female"));
+        MainActivity.userInforArrayList.add(new UserInfor("vip@gmail.com","0356553653","tototo123","Nguyễn Văn C","15/1/1999","Male"));
+        MainActivity.userInforArrayList.add(new UserInfor("vippro123@gmail.com","0356981653","tototo123","Nguyễn Thị D","1/1/1999","Male"));
+        MainActivity.userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123","Nguyễn Hữu Cảnh","1/1/1999","Male"));
 
 
         btnClick = findViewById(R.id.btnLogin);
@@ -54,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(this  , "Đăng nhập thành công", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
             else Toast.makeText(this  , "Vui lòng kiểm tra lại tài khoản", Toast.LENGTH_LONG).show();
         }
@@ -66,12 +63,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public boolean checkLogin(String account, String pass)
     {
-        for (int i = 0; i < userInforArrayList.size(); i++)
+        for (int i = 0; i <  MainActivity.userInforArrayList.size(); i++)
         {
-            if (account.equals(userInforArrayList.get(i).getEmail()) || account.equals(userInforArrayList.get(i).getPhone()))
+            if (account.equals( MainActivity.userInforArrayList.get(i).getEmail()) || account.equals( MainActivity.userInforArrayList.get(i).getPhone()))
             {
-                if (pass.equals(userInforArrayList.get(i).getPassword()));
-                return true;
+                if (pass.equals( MainActivity.userInforArrayList.get(i).getPassword())) {
+                    MainActivity.index = i;
+                    return true;
+                }
             }
         }
         return false;

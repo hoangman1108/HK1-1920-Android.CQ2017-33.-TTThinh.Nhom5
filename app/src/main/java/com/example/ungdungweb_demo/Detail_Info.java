@@ -33,6 +33,14 @@ public class Detail_Info extends AppCompatActivity {
         txtPhone=findViewById(R.id.detail_phone);
         txtGender=findViewById(R.id.detail_gender);
 
+        if(MainActivity.index!=-1) {
+            txtName.setText(MainActivity.userInforArrayList.get(MainActivity.index).getName());
+            txtEmail.setText(MainActivity.userInforArrayList.get(MainActivity.index).getEmail());
+            txtPhone.setText(MainActivity.userInforArrayList.get(MainActivity.index).getPhone());
+            txtGender.setText(MainActivity.userInforArrayList.get(MainActivity.index).getGender());
+            txtBirthday.setText(MainActivity.userInforArrayList.get(MainActivity.index).getDate());
+        }
+
 //        Intent intent=getIntent();
 //        Bundle bundle=intent.getBundleExtra("infor");
 //
@@ -87,6 +95,14 @@ public class Detail_Info extends AppCompatActivity {
                 MainActivity.menu1.findItem(R.id.itemName).setTitle(txtName.getText());
                 MainActivity.menu1.findItem(R.id.itemEmail).setTitle(txtEmail.getText());
                 MainActivity.menu1.findItem(R.id.itemSdt).setTitle(txtPhone.getText());
+
+                if(MainActivity.index!=-1) {
+
+                    MainActivity.userInforArrayList.get(MainActivity.index).setName(txtName.getText().toString());
+                    MainActivity.userInforArrayList.get(MainActivity.index).setEmail(txtEmail.getText().toString());
+                    MainActivity.userInforArrayList.get(MainActivity.index).setPhone(txtPhone.getText().toString());
+                    MainActivity.userInforArrayList.get(MainActivity.index).setDate(txtBirthday.getText().toString());
+                }
                 if(radioButton_female.isChecked())
                 {
                     txtGender.setText(radioButton_female.getText());
@@ -95,11 +111,21 @@ public class Detail_Info extends AppCompatActivity {
                 {
                     txtGender.setText(radioButton_male.getText());
                 }
+                MainActivity.userInforArrayList.get(MainActivity.index).setGender(txtGender.getText().toString());
+
                 dialog.dismiss();
             }
         });
         dialog.show();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(Detail_Info.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 
