@@ -17,10 +17,11 @@ import java.util.ArrayList;
 
 public class GioHangFragment extends ListFragment{
 
-    GioHangAdapter adapter;
+    public static GioHangAdapter adaptergiohang;
 
-    TextView tvTongTien;
-    Button btnTongTien, btnGiamGia;
+    public static TextView tvTongTien;
+    Button btnGiamGia;
+    public static Button btnTongTien;
 
 
     @Nullable
@@ -31,9 +32,9 @@ public class GioHangFragment extends ListFragment{
         tvTongTien = view.findViewById(R.id.tv_fragment_giohang_tongtien);
         btnTongTien = view.findViewById(R.id.btn_fragment_giohang_tongtien);
         btnGiamGia = view.findViewById(R.id.btn_fragment_giohang_giamgia);
-        adapter = new GioHangAdapter(getActivity(),R.layout.dia_don_hang,MainActivity.gioHangArrayList);
-//        MainActivity.gioHangArrayList.add(new GioHang("Hồng trà mật ong","45.000 đ",1));
-        setListAdapter(adapter);
+        adaptergiohang = new GioHangAdapter(getActivity(),R.layout.dia_don_hang,MainActivity.gioHangArrayList);
+
+        setListAdapter(adaptergiohang);
         tvTongTien.setText(TongTien()+".000 đ");
         btnTongTien.setText(TongTien()+".000 đ");
         btnGiamGia.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +49,7 @@ public class GioHangFragment extends ListFragment{
         return view;
     }
 
-    public int TongTien(){
+    public static int TongTien(){
         int tong = 0;
         String tien ;
         for(int i = 0;i<MainActivity.gioHangArrayList.size();i++){
@@ -61,7 +62,7 @@ public class GioHangFragment extends ListFragment{
         return tong;
     }
 
-    private String getStringTien(String tien){
+    public static String getStringTien(String tien){
         String temp = "";
         for(int i = 0;i<tien.length();i++){
             if(tien.charAt(i) =='.') {

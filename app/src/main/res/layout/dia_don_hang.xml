@@ -35,16 +35,42 @@
                 android:text="50.000 đ"
                 android:id="@+id/tv_don_hang_giamon"/>
         </LinearLayout>
-        <TextView
-            android:id="@+id/tv_don_hang_soluong"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:layout_margin="20dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/bg_round_corner"
-            android:textSize="24dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tv_don_hang_soluong"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="2"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/bg_round_corner"-->
+<!--            android:textSize="24dp"/>-->
+        <LinearLayout
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_sub_gio_hang"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#FF0000"
+                android:background="@drawable/sub"/>
+            <TextView
+                android:id="@+id/tv_don_hang_soluong"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="1"
+                android:textSize="30dp"
+                android:textColor="#000000"/>
+            <Button
+                android:id="@+id/btn_add_gio_hang"
+                android:backgroundTint="#FF9800"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/add_mon1"/>
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

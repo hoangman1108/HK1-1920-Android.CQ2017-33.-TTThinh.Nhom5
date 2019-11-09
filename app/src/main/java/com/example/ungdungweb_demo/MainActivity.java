@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (index == -1) {
             Intent intentA = new Intent(this, LoginActivity.class);
             startActivity(intentA);
+            finish();
         }
 
         //trang dể kết hiển thị các trang khác
