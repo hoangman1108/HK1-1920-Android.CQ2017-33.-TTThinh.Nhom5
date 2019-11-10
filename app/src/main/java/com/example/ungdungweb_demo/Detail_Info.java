@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -64,7 +66,7 @@ public class Detail_Info extends AppCompatActivity {
 
         final Dialog dialog=new Dialog(Detail_Info.this);
         dialog.setContentView(R.layout.dialog_change_info);
-
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Button dialog_btn_cancel=dialog.findViewById(R.id.dialog_btn_cancel);
         Button dialog_btn_change=dialog.findViewById(R.id.dialog_btn_change);
         final EditText dialog_detail_name=dialog.findViewById(R.id.dialog_detail_name);

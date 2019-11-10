@@ -5,116 +5,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg_info"
     tools:context=".Detail_Info">
 
     <ImageView
         android:id="@+id/imgview_ava"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
         android:background="@drawable/ava"
         android:layout_marginTop="20dp"/>
     <LinearLayout
+        android:paddingLeft="20dp"
         android:layout_marginTop="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:text="Name "
             android:textSize="20sp"
-            android:layout_width="0dp"
-            android:layout_weight="4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
+            android:textStyle="bold"
+            android:textColor="#70130C"
             android:id="@+id/detail_name"
-            android:layout_width="0dp"
-            android:layout_weight="9"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Đoàn Thị Cẩm Nhung"
             android:textSize="24sp"/>
 
     </LinearLayout>
+    <TextView
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#70130C"/>
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:text="Day of birth "
             android:textSize="20sp"
-            android:layout_width="0dp"
-            android:layout_weight="4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:textStyle="bold"
+            android:textColor="#70130C"
             android:id="@+id/detail_birthday"
-            android:layout_width="0dp"
-            android:layout_weight="9"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="14/01/1999"
             android:textSize="24sp"/>
 
     </LinearLayout>
+    <TextView
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#70130C"/>
     <LinearLayout
-    android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
         android:text="Gender "
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_weight="4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
+        android:textStyle="bold"
+        android:textColor="#70130C"
         android:id="@+id/detail_gender"
-        android:layout_width="0dp"
-        android:layout_weight="9"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Female"
         android:textSize="24sp"/>
 
     </LinearLayout>
+    <TextView
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#70130C"/>
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:text="Phone "
             android:textSize="20sp"
-            android:layout_width="0dp"
-            android:layout_weight="4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
+            android:textStyle="bold"
+            android:textColor="#70130C"
             android:id="@+id/detail_phone"
-            android:layout_width="0dp"
-            android:layout_weight="9"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0334558099"
             android:textSize="24sp"/>
 
     </LinearLayout>
+    <TextView
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#70130C"/>
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:text="Email "
             android:textSize="20sp"
-            android:layout_width="0dp"
-            android:layout_weight="4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
+            android:textStyle="bold"
+            android:textColor="#70130C"
             android:id="@+id/detail_email"
-            android:layout_width="0dp"
-            android:layout_weight="9"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="quynhlam1411999@gmail.com"
             android:textSize="24sp"/>
 
     </LinearLayout>
     <Button
-        android:layout_marginTop="100dp"
+        android:background="@drawable/dia_bg"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:id="@+id/btn_change"
+        android:textStyle="bold"
         android:text="Change"
         />
 </LinearLayout>
