@@ -20,6 +20,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         btnClick = findViewById(R.id.btnSignup);
         btnClick.setOnClickListener(this);
+
+
     }
 
 
@@ -28,6 +30,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         if (view == btnClick)
         {
             Toast.makeText(this,"đăng kí thành công",Toast.LENGTH_LONG).show();
+//            MainActivity.mData.child("UserInfor").push().setValue(new UserInfor("hoangman772@gmail.com","0967945772","man123","Mẫn Mong Manh","11/08/1998","Male"));
             Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
             startActivity(intent);
         }

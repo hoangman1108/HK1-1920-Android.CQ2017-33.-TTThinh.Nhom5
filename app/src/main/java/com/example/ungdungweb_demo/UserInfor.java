@@ -1,63 +1,70 @@
 package com.example.ungdungweb_demo;
 
 public class UserInfor {
+    public UserInfor() {
+    }
+
     public UserInfor(String email, String phone, String password, String name, String date, String gender) {
-        Email = email;
-        Phone = phone;
-        Password = password;
-        Name = name;
-        Date = date;
-        Gender = gender;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.name = name;
+        this.date = date;
+        this.gender = gender;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        this.gender = gender;
     }
 
-    private String Email, Phone, Password;
-    private String Name, Date, Gender;
+    public String email;
+    public String phone;
+    public String password;
+    public String name;
+    public String date;
+    public String gender;
 }

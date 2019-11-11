@@ -1,6 +1,7 @@
 package com.example.ungdungweb_demo;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,7 +11,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,9 +27,22 @@ import android.widget.TextView;
 
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,8 +51,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<UserInfor> userInforArrayList = new ArrayList<>();
 
+    public static  ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
     public static int index=-1;
 
+    public static DatabaseReference mData =FirebaseDatabase.getInstance().getReference();
+    public static FirebaseStorage storage = FirebaseStorage.getInstance();
+
+    StorageReference storageRef = storage.getReferenceFromUrl("gs://database-projectandroid.appspot.com");
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
@@ -51,7 +74,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        mData = FirebaseDatabase.getInstance().getReference();
+
+//       mData.child("UserInfor").push().setValue(oject)
+
         if (index == -1) {
+            DataBase();
+            LoadDataNuoc();
+
             Intent intentA = new Intent(this, LoginActivity.class);
             startActivity(intentA);
             finish();
@@ -134,6 +164,112 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return true;
+    }
+
+    public void DataBase(){
+//        for(int i = 0;i<userInforArrayList.size();i++){
+//            mData.child("UserInfor").push().setValue(userInforArrayList.get(i));
+//        }
+        userInforArrayList.clear();
+        monNuocArrayList.clear();
+
+        mData.child("UserInfor").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                UserInfor userInfor = dataSnapshot.getValue(UserInfor.class);
+                userInforArrayList.add(userInfor);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        mData.child("MonNuoc").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                MonNuoc monNuoc = dataSnapshot.getValue(MonNuoc.class);
+                monNuocArrayList.add(monNuoc);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void LoadDataNuoc(){
+
+//          monNuocArrayList.add(new MonNuoc("38.000","37.000","Machiato Mango","Machiato co...","https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/1.jpg?alt=media&token=c8b9277b-41e9-4cbb-b3d2-7957f735c97a","https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/1.jpg?alt=media&token=c8b9277b-41e9-4cbb-b3d2-7957f735c97a"));
+////        monNuocArrayList.add(new MonNuoc("41.000","35.000","Black coffee","Milk coffee"));
+////        monNuocArrayList.add(new MonNuoc("40.000","36.000","Blue sky","Tropical stom"));
+////        monNuocArrayList.add(new MonNuoc("55.000","39.000","Hột é","Nước mía"));
+////        monNuocArrayList.add(new MonNuoc("37.000","44.000","cocain","red malboro"));
+////        monNuocArrayList.add(new MonNuoc("37.000",null,"cocain",null));
+
+//        ArrayList<String> urlImageNuoc = new ArrayList<>();
+//        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/1.jpg?alt=media&token=f7dc6d3e-661d-4515-a8fc-19fcdc745129");
+//        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/2.jpg?alt=media&token=158ad782-8a33-4bda-926c-2af6c66fb21a");
+//
+//        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/3.jpg?alt=media&token=22459459-2707-464a-a5be-b3fe14730991");
+//        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/4.jpg?alt=media&token=cb35ff7f-6c78-4ba0-897c-939e8de8a12d");
+//        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/5.jpg?alt=media&token=f482f667-1641-47c7-a9c2-ac2e42b6c38f");
+//        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/6.jpg?alt=media&token=91bd6c15-371f-4803-a4aa-9752c6bce2ee");
+////        MonNuoc monNuoc = new MonNuoc("38.000","37.000","Machiato Mango","Machiato co...",urlImageNuoc.get(0), urlImageNuoc.get(1));
+//        MonNuoc monNuoc = new MonNuoc("41.000","35.000","Black coffee","Milk coffee",urlImageNuoc.get(2), urlImageNuoc.get(3));
+//        MonNuoc monNuoc1 = new MonNuoc("40.000","36.000","Blue sky","Tropical stom",urlImageNuoc.get(4), urlImageNuoc.get(5));
+//        MonNuoc monNuoc2 = new MonNuoc("55.000","39.000","Hột é","Nước mía",urlImageNuoc.get(0), urlImageNuoc.get(1));
+//        MonNuoc monNuoc3 = new MonNuoc("37.000","44.000","cocain","red malboro",urlImageNuoc.get(3), urlImageNuoc.get(4));
+//
+//        mData.child("MonNuoc").push().setValue(monNuoc);
+//        mData.child("MonNuoc").push().setValue(monNuoc1);
+//        mData.child("MonNuoc").push().setValue(monNuoc2);
+//        mData.child("MonNuoc").push().setValue(monNuoc3);
+
+
+//        mData.child("MonNuoc").push().setValue(monNuoc, new DatabaseReference.CompletionListener() {
+//            @Override
+//            public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+//                if(databaseError== null){
+//                    Toast.makeText(MainActivity.this, "Lưu dữ liệu thành công", Toast.LENGTH_SHORT).show();
+//
+//                }else {
+//                    Toast.makeText(MainActivity.this, "lỗi lưu dữ liệu", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 }
 

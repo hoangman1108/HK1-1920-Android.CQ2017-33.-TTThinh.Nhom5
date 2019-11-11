@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 import com.google.android.gms.common.server.converter.StringToIntConverter;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,8 +85,11 @@ public class MonNuocAdapter extends BaseAdapter{
         }
 
         final MonNuoc monNuoc = list.get(position);
-        viewHolder.imageView1.setImageResource(R.drawable.ava);
-        viewHolder.imageView2.setImageResource(R.drawable.ava);
+        Picasso.get().load(monNuoc.getHinh1()).into(viewHolder.imageView1);
+        Picasso.get().load(monNuoc.getHinh2()).into(viewHolder.imageView2);
+
+//        viewHolder.imageView1.setImageResource(R.drawable.ava);
+//        viewHolder.imageView2.setImageResource(R.drawable.ava);
         viewHolder.tvTenMon1.setText(monNuoc.getTenMon1());
         viewHolder.tvTenMon2.setText(monNuoc.getTenMon2());
         viewHolder.btnGia1.setText(monNuoc.getGia1());
@@ -143,7 +147,7 @@ public class MonNuocAdapter extends BaseAdapter{
                 btnMua.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong));
+                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong,monNuoc.getHinh1()));
                         dialog.dismiss();
                     }
                 });
@@ -231,7 +235,7 @@ public class MonNuocAdapter extends BaseAdapter{
                 btnMua.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong));
+                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong,monNuoc.getHinh2()));
                         dialog.dismiss();
                     }
                 });

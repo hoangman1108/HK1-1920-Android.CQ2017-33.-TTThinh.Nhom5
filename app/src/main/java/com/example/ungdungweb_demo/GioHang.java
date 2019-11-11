@@ -1,37 +1,50 @@
 package com.example.ungdungweb_demo;
 
 public class GioHang {
-    String tenMon;
-    String Gia;
-    int SoLuong;
+    String tenmon;
+    String gia;
+    int soluong;
+    String hinh;
 
-    public GioHang(String tenMon, String gia, int soLuong) {
-        this.tenMon = tenMon;
-        Gia = gia;
-        SoLuong = soLuong;
+    public GioHang() {
     }
 
-    public String getTenMon() {
-        return tenMon;
+    public GioHang(String tenmon, String gia, int soluong, String hinh) {
+        this.tenmon = tenmon;
+        this.gia = gia;
+        this.soluong = soluong;
+        this.hinh = hinh;
     }
 
-    public void setTenMon(String tenMon) {
-        this.tenMon = tenMon;
+    public String getTenmon() {
+        return tenmon;
+    }
+
+    public void setTenmon(String tenmon) {
+        this.tenmon = tenmon;
     }
 
     public String getGia() {
-        return Gia;
+        return gia;
     }
 
     public void setGia(String gia) {
-        Gia = gia;
+        this.gia = gia;
     }
 
-    public int getSoLuong() {
-        return SoLuong;
+    public int getSoluong() {
+        return soluong;
     }
 
-    public void setSoLuong(int soLuong) {
-        SoLuong = soLuong;
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
+    }
+
+    public String getHinh() {
+        return hinh;
+    }
+
+    public void setHinh(String hinh) {
+        this.hinh = hinh;
     }
 }

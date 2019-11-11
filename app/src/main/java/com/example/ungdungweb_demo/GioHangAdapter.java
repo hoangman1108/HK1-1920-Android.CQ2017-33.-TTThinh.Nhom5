@@ -11,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -48,6 +51,7 @@ public class GioHangAdapter extends BaseAdapter {
         TextView gia;
         TextView soluong;
         Button add, sub;
+        ImageView imgHinh;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -63,6 +67,7 @@ public class GioHangAdapter extends BaseAdapter {
             viewHolder.soluong =(TextView)convertView.findViewById(R.id.tv_don_hang_soluong);
             viewHolder.add = convertView.findViewById(R.id.btn_add_gio_hang);
             viewHolder.sub = convertView.findViewById(R.id.btn_sub_gio_hang);
+            viewHolder.imgHinh = convertView.findViewById(R.id.imgview_don_hang_avata);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -70,14 +75,16 @@ public class GioHangAdapter extends BaseAdapter {
 
         final GioHang gioHang = list.get(position);
 
-        viewHolder.ten.setText(gioHang.getTenMon());
+        viewHolder.ten.setText(gioHang.getTenmon());
         viewHolder.gia.setText(gioHang.getGia());
-        viewHolder.soluong.setText(gioHang.getSoLuong()+"");
+        viewHolder.soluong.setText(gioHang.getSoluong()+"");
+        Picasso.get().load(list.get(position).getHinh()).into(viewHolder.imgHinh);
+
 
         viewHolder.sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(gioHang.getSoLuong() == 1){
+                if(gioHang.getSoluong() == 1){
                     final Dialog dialog = new Dialog(context);
                     dialog.setContentView(R.layout.dialog_xoa_mon);
                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -107,12 +114,12 @@ public class GioHangAdapter extends BaseAdapter {
                     dialog.show();
                 }
                 else{
-                    gioHang.setSoLuong(gioHang.getSoLuong()-1);
-                    list.get(position).setSoLuong(gioHang.getSoLuong());
-                    viewHolder.soluong.setText(gioHang.getSoLuong()+"");
+                    gioHang.setSoluong(gioHang.getSoluong()-1);
+                    list.get(position).setSoluong(gioHang.getSoluong());
+                    viewHolder.soluong.setText(gioHang.getSoluong()+"");
 
                     int gia = Gia(gioHang.getGia());
-                    gioHang.setGia(gia*gioHang.getSoLuong()/(gioHang.getSoLuong()+1) +"");
+                    gioHang.setGia(gia*gioHang.getSoluong()/(gioHang.getSoluong()+1) +"");
                     viewHolder.gia.setText(gioHang.getGia()+".000 đ");
                     list.get(position).setGia(gioHang.getGia()+".000 đ");
                     GioHangFragment.tvTongTien.setText(GioHangFragment.TongTien()+".000 đ");
@@ -123,12 +130,12 @@ public class GioHangAdapter extends BaseAdapter {
         viewHolder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gioHang.setSoLuong(gioHang.getSoLuong()+1);
-                list.get(position).setSoLuong(gioHang.getSoLuong());
-                viewHolder.soluong.setText(gioHang.getSoLuong()+"");
+                gioHang.setSoluong(gioHang.getSoluong()+1);
+                list.get(position).setSoluong(gioHang.getSoluong());
+                viewHolder.soluong.setText(gioHang.getSoluong()+"");
 
                 int gia = Gia(gioHang.getGia());
-                gioHang.setGia(gia*gioHang.getSoLuong()/(gioHang.getSoLuong()-1) +"");
+                gioHang.setGia(gia*gioHang.getSoluong()/(gioHang.getSoluong()-1) +"");
                 viewHolder.gia.setText(gioHang.getGia()+".000 đ");
                 list.get(position).setGia(gioHang.getGia()+".000 đ");
                 GioHangFragment.tvTongTien.setText(GioHangFragment.TongTien()+".000 đ");

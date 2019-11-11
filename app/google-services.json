@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "713229803007",
+    "firebase_url": "https://database-projectandroid.firebaseio.com",
+    "project_id": "database-projectandroid",
+    "storage_bucket": "database-projectandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713229803007:android:098a7144b886f85c30dbca",
+        "android_client_info": {
+          "package_name": "com.example.ungdungweb_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713229803007-hjcsdm7rckdsjhn7bjonm77kinovrv6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-IJ3BwDPDDrmVdUWBzhk6ZtUfGPSeYyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713229803007-hjcsdm7rckdsjhn7bjonm77kinovrv6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

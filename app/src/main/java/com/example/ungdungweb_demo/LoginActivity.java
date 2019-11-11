@@ -1,5 +1,7 @@
 package com.example.ungdungweb_demo;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
 
@@ -23,14 +29,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        MainActivity.userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123","Nguyễn Hoàng Mẫn","11/08/1980","Female"));
-        MainActivity.userInforArrayList.add(new UserInfor("hello@gmail.com","0356981653","tototo123","Nguyễn Văn văn","1/1/1999","Male"));
-        MainActivity.userInforArrayList.add(new UserInfor("alen@gmail.com","03569345653","tototo123","Cao Văn Lầu","11/1/1999","Male"));
-        MainActivity.userInforArrayList.add(new UserInfor("pro@gmail.com","0356933553","tototo123","Nguyễn Văn B","12/1/1999","Female"));
-        MainActivity.userInforArrayList.add(new UserInfor("vip@gmail.com","0356553653","tototo123","Nguyễn Văn C","15/1/1999","Male"));
-        MainActivity.userInforArrayList.add(new UserInfor("vippro123@gmail.com","0356981653","tototo123","Nguyễn Thị D","1/1/1999","Male"));
-        MainActivity.userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123","Nguyễn Hữu Cảnh","1/1/1999","Male"));
-        MainActivity.userInforArrayList.add(new UserInfor("a","0355555553","b","Nguyễn Hữu Cảnh","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123","Nguyễn Hoàng Mẫn","11/08/1980","Female"));
+//        MainActivity.userInforArrayList.add(new UserInfor("hello@gmail.com","0356981653","tototo123","Nguyễn Văn văn","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("alen@gmail.com","03569345653","tototo123","Cao Văn Lầu","11/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("pro@gmail.com","0356933553","tototo123","Nguyễn Văn B","12/1/1999","Female"));
+//        MainActivity.userInforArrayList.add(new UserInfor("vip@gmail.com","0356553653","tototo123","Nguyễn Văn C","15/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("vippro123@gmail.com","0356981653","tototo123","Nguyễn Thị D","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123","Nguyễn Hữu Cảnh","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("a","0355555553","b","Nguyễn Hữu Cảnh","1/1/1999","Male"));
+//
 
 
         btnClick = findViewById(R.id.btnLogin);
