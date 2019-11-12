@@ -35,8 +35,9 @@ public class GioHangFragment extends ListFragment{
         btnGiamGia = view.findViewById(R.id.btn_fragment_giohang_giamgia);
         btnXacNhan = view.findViewById(R.id.btn_xacnhandachangfinal);
         adaptergiohang = new GioHangAdapter(getActivity(),R.layout.dia_don_hang,MainActivity.gioHangArrayList);
-
         setListAdapter(adaptergiohang);
+
+
         tvTongTien.setText(TongTien()+".000 đ");
         btnTongTien.setText(TongTien()+".000 đ");
         btnGiamGia.setOnClickListener(new View.OnClickListener() {

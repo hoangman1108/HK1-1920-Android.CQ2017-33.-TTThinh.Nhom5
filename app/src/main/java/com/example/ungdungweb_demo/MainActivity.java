@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static  ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
 
-    public static  ArrayList<DonHang> donHangArrayList = new ArrayList<>();
 
     public static int index=-1;
 
