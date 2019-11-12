@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".QuanLy">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="Đơn Hàng"
+            android:textAllCaps="false"
+            android:background="@drawable/dia_bg"
+            android:id="@+id/btn_quanly_DonHang"
+            android:textSize="30dp"/>
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="Menu"
+            android:textAllCaps="false"
+            android:id="@+id/btn_quanly_Menu"
+            android:background="@drawable/dia_bg"
+            android:textSize="30dp"/>
+    </LinearLayout>
+</LinearLayout>

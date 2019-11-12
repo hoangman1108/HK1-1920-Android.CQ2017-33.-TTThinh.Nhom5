@@ -56,9 +56,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (checkLogin(account.getText().toString(),pass.getText().toString()))
             {
                 Toast.makeText(this  , "Đăng nhập thành công", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                if(account.getText().toString().equals("vip@gmail.com")){
+                    startActivity(new Intent(LoginActivity.this, QuanLy.class));
+                    finish();
+                }else {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
             else Toast.makeText(this  , "Vui lòng kiểm tra lại tài khoản", Toast.LENGTH_LONG).show();
         }
@@ -76,8 +81,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (account.equals( MainActivity.userInforArrayList.get(i).getEmail()) || account.equals( MainActivity.userInforArrayList.get(i).getPhone()))
             {
                 if (pass.equals( MainActivity.userInforArrayList.get(i).getPassword())) {
-                    MainActivity.index = i;
-                    return true;
+
+                           MainActivity.index = i;
+                           return true;
+
                 }
             }
         }

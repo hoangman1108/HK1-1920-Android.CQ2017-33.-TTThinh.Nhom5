@@ -8,6 +8,9 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,8 +27,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="bottom"
+                android:paddingTop="20dp"
                 android:paddingLeft="20dp"
-                android:paddingBottom="20dp"
+                android:paddingBottom="10dp"
                 android:text="ĐĂNG KÝ"
                 android:textColor="#fff4e6"
                 android:textSize="30sp"
@@ -94,6 +98,21 @@
                 android:textSize="24sp"
                 android:layout_marginBottom="20dp"
                 />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ngày sinh:"
+                android:textColor="#3c2f2f"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="11/08/1998"
+                android:textSize="24sp"
+                android:layout_marginBottom="20dp"
+                />
             <Button
                 android:id="@+id/btnSignup"
                 android:layout_width="wrap_content"
@@ -104,4 +123,5 @@
                 />
         </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 </androidx.drawerlayout.widget.DrawerLayout>

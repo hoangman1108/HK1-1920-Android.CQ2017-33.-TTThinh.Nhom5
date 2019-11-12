@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static ArrayList<UserInfor> userInforArrayList = new ArrayList<>();
 
     public static  ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
+
+    public static  ArrayList<DonHang> donHangArrayList = new ArrayList<>();
+
     public static int index=-1;
 
     public static DatabaseReference mData =FirebaseDatabase.getInstance().getReference();
@@ -86,6 +89,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intentA);
             finish();
         }
+//        else
+//        if(index == -2){
+//            Intent intentA = new Intent(this, QuanLy.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
         //trang dể kết hiển thị các trang khác
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigationview);

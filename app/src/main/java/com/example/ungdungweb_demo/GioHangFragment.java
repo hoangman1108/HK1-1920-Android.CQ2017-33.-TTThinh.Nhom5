@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class GioHangFragment extends ListFragment{
     public static GioHangAdapter adaptergiohang;
 
     public static TextView tvTongTien;
-    Button btnGiamGia;
+    Button btnGiamGia, btnXacNhan;
     public static Button btnTongTien;
 
 
@@ -32,6 +33,7 @@ public class GioHangFragment extends ListFragment{
         tvTongTien = view.findViewById(R.id.tv_fragment_giohang_tongtien);
         btnTongTien = view.findViewById(R.id.btn_fragment_giohang_tongtien);
         btnGiamGia = view.findViewById(R.id.btn_fragment_giohang_giamgia);
+        btnXacNhan = view.findViewById(R.id.btn_xacnhandachangfinal);
         adaptergiohang = new GioHangAdapter(getActivity(),R.layout.dia_don_hang,MainActivity.gioHangArrayList);
 
         setListAdapter(adaptergiohang);
@@ -45,6 +47,27 @@ public class GioHangFragment extends ListFragment{
             }
         });
 
+        if(MainActivity.gioHangArrayList.isEmpty()){
+            btnXacNhan.setClickable(false);
+        }
+        else {
+            btnXacNhan.setClickable(true);
+            btnXacNhan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DonHang donHang = new DonHang();
+                    String temp = MainActivity.userInforArrayList.get(MainActivity.index).getPhone();
+                    donHang.setSdt(temp);
+                    donHang.setDonhang(MainActivity.gioHangArrayList);
+                    MainActivity.mData.child("DonHang").push().setValue(donHang);
+                    Toast.makeText(getActivity(), "Thành Công", Toast.LENGTH_SHORT).show();
+                    MainActivity.gioHangArrayList.clear();
+                    MainActivity.navigationView.setCheckedItem(R.id.itemGioHang);
+                    Fragment fragment = new GioHangFragment();
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).show(fragment).commit();
+                }
+            });
+        }
 
         return view;
     }

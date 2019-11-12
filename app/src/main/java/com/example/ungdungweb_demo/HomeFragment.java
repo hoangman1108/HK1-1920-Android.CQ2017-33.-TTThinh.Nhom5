@@ -75,24 +75,7 @@ public class HomeFragment extends Fragment {
         btnDiaChi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new MapsFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).show(fragment).commit();
-            }
-        });
-
-        btnDatHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                MainActivity.navigationView.setCheckedItem(R.id.itemHomeMenu);
-                Fragment fragment = new MenuMonFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).show(fragment).commit();
-            }
-        });
-
-        btnDiaChi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                MainActivity.navigationView.setCheckedItem(R.id.itemMap);
                 Fragment fragment = new MapsFragment();
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).show(fragment).commit();
             }
