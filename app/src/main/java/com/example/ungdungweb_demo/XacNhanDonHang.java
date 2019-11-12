@@ -54,5 +54,22 @@ public class XacNhanDonHang extends AppCompatActivity {
                 startActivity(new Intent(XacNhanDonHang.this, XacNhanDonHangFinal.class));
             }
         });
+
+        QuanLy.mData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    adapter.clear();
+                    for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
+                        adapter.add("Có đơn hàng từ sđt: "+QuanLy.donHangArrayList.get(i).getSdt());
+                    }
+                    adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }
