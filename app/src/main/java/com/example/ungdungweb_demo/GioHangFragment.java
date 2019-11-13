@@ -14,7 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class GioHangFragment extends ListFragment{
 
@@ -60,9 +64,16 @@ public class GioHangFragment extends ListFragment{
                     String temp = MainActivity.userInforArrayList.get(MainActivity.index).getPhone();
                     donHang.setSdt(temp);
                     donHang.setDonhang(MainActivity.gioHangArrayList);
+                    donHang.setTime(getDateTime());
                     MainActivity.mData.child("DonHang").push().setValue(donHang);
                     Toast.makeText(getActivity(), "Thành Công", Toast.LENGTH_SHORT).show();
                     MainActivity.gioHangArrayList.clear();
+
+
+
+                    RequestXacnhan requestXacnhan = new RequestXacnhan(MainActivity.userInforArrayList.get(MainActivity.index).getPhone(),"chời...",getDateTime());
+                    MainActivity.mData.child("RequestDonHang").push().setValue(requestXacnhan);
+
                     MainActivity.navigationView.setCheckedItem(R.id.itemGioHang);
                     Fragment fragment = new GioHangFragment();
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).show(fragment).commit();
@@ -71,6 +82,12 @@ public class GioHangFragment extends ListFragment{
         }
 
         return view;
+    }
+
+    private String getDateTime() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 
     public static int TongTien(){

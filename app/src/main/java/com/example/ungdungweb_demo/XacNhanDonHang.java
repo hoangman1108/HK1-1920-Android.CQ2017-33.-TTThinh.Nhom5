@@ -28,6 +28,7 @@ public class XacNhanDonHang extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     ListView lvdonhang;
     ArrayList<String> arr;
+    ThongTinDonAdapter thongTinDonAdapter;
 
 
     @Override
@@ -43,9 +44,11 @@ public class XacNhanDonHang extends AppCompatActivity {
             arr.add("Có đơn hàng từ sđt: "+QuanLy.donHangArrayList.get(i).getSdt());
         }
 
-        adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arr);
-        lvdonhang.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        thongTinDonAdapter = new ThongTinDonAdapter(this, R.layout.dia_thongtin_nhan_don_hang,QuanLy.donHangArrayList);
+
+//        adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arr);
+        lvdonhang.setAdapter(thongTinDonAdapter);
+//        adapter.notifyDataSetChanged();
 
         lvdonhang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -55,21 +58,21 @@ public class XacNhanDonHang extends AppCompatActivity {
             }
         });
 
-        QuanLy.mData.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    adapter.clear();
-                    for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
-                        adapter.add("Có đơn hàng từ sđt: "+QuanLy.donHangArrayList.get(i).getSdt());
-                    }
-                    adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        QuanLy.mData.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    adapter.clear();
+//                    for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
+//                        adapter.add("Có đơn hàng từ sđt: "+QuanLy.donHangArrayList.get(i).getSdt());
+//                    }
+//                    adapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
     }
 }

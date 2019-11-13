@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static  ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
 
+    public static ArrayList<RequestXacnhan> requestXacnhanArrayList = new ArrayList<>();
+
 
     public static int index=-1;
 
@@ -214,6 +216,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 MonNuoc monNuoc = dataSnapshot.getValue(MonNuoc.class);
                 monNuocArrayList.add(monNuoc);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        mData.child("RequestDonHang").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                RequestXacnhan requestXacnhan = dataSnapshot.getValue(RequestXacnhan.class);
+                requestXacnhanArrayList.add(requestXacnhan);
             }
 
             @Override

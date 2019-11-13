@@ -7,10 +7,20 @@ public class DonHang {
 
     ArrayList<GioHang> donhang;
     String sdt;
+    String time;
 
-    public DonHang(ArrayList<GioHang> donhang, String sdt) {
+    public DonHang(ArrayList<GioHang> donhang, String sdt, String time) {
         this.donhang = donhang;
         this.sdt = sdt;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public ArrayList<GioHang> getDonhang() {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="@color/colorPrimary">
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_dia_thongtinxacnhan"
+            android:textSize="24sp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Có đơn hàng từ: 000000000"/>
+    </LinearLayout>
+    <TextView
+        android:gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/tv_dia_xacnhanguoigui_time"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10:23 - 11/13/2019"/>
+</LinearLayout>

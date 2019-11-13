@@ -3,6 +3,7 @@ package com.example.ungdungweb_demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -23,7 +24,7 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         btnXacNhan = findViewById(R.id.btn_xacnhan);
         btnTuChoi = findViewById(R.id.btn_tuchoi);
         btnTien = findViewById(R.id.btn_xacnhan_tongtien);
-        btnTien = findViewById(R.id.btn_xacnhan_giamgia);
+        btnCoupon = findViewById(R.id.btn_xacnhan_giamgia);
         tvTien = findViewById(R.id.tv_xacnhan_tongtien);
 
        xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,QuanLy.donHangArrayList.get(QuanLy.index).getDonhang());
@@ -31,6 +32,16 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         int S = TongTien();
         tvTien.setText(S+".000 đ");
         btnTien.setText(S+".000 đ");
+        btnXacNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                RequestXacnhan requestXacnhan = new RequestXacnhan(MainActivity.userInforArrayList.get(MainActivity.index).getPhone(),"accept");
+//                QuanLy.mData.child("XacNhan").push().setValue(requestXacnhan);
+
+//                RequestXacnhan requestXacnhan = new RequestXacnhan(QuanLy.donHangArrayList.get(QuanLy.index).getSdt(),"xác nhận",);
+//                QuanLy.mData.child("RequestDonHang").setValue();
+            }
+        });
 
     }
     public static int TongTien(){

@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeFragment extends Fragment {
-    ImageButton btnDatHang, btnCoupon, btnTichDiem, btnDiaChi;
+    ImageButton btnDatHang, btnCoupon, btnTichDiem, btnDiaChi, btnRequest;
     private ImageView imgbtAva;
     public MainActivity mainActivity;
     TextView tvName;
@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
         btnCoupon = view.findViewById(R.id.btn_fragment_main_Coupon);
         btnDiaChi = view.findViewById(R.id.btn_fragment_main_DiaChi);
         btnTichDiem = view.findViewById(R.id.btn_fragment_main_TichDiem);
+        btnRequest = view.findViewById(R.id.btn_fragment_main_thongbao);
 
         tvName=view.findViewById(R.id.tv_fragment_main_name);
 
@@ -54,6 +55,12 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
+        btnRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), RequestActivity.class));
+            }
+        });
         btnTichDiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

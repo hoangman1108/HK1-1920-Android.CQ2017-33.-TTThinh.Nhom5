@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:id="@+id/scrollView"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".MainActivity"
@@ -114,16 +115,25 @@
                 android:text="@string/goi_y"
                 android:src="@drawable/ic_location"
                 android:background="@drawable/circle"/>
-
+            <ImageButton
+                android:id="@+id/btn_fragment_main_thongbao"
+                android:layout_margin="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:text="@string/goi_y"
+                android:src="@drawable/request"
+                android:background="@drawable/circle"/>
             <TextView
                 android:layout_gravity="bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="0"
-                android:text="Dat Hang"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:text="Đặt Hàng"
+               android:layout_marginLeft="20dp"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
@@ -134,9 +144,8 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="1"
+                android:layout_marginLeft="30dp"
                 android:text="Coupon"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="10dp"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
@@ -148,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="2"
-                android:text="Tich diem"
+                android:text="Tích Điểm"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
                 android:textSize="15sp"
@@ -169,6 +178,32 @@
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:textAlignment="center"/>
+            <TextView
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:text="Dia chi"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="25dp"
+                android:text="Thông Báo"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </GridLayout>
         <LinearLayout
             android:layout_width="match_parent"

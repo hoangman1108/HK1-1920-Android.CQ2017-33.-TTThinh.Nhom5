@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,9 +41,17 @@ public class QuanLy extends AppCompatActivity {
             }
         });
 
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                donHangArrayList.remove(1);
+            }
+        });
+
     }
 
-    public void DataBase(){
+    public static void DataBase(){
+        donHangArrayList.clear();
         mData.child("DonHang").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

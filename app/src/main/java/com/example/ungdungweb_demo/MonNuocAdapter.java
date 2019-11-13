@@ -171,13 +171,22 @@ public class MonNuocAdapter extends BaseAdapter{
                         if(soluong>1)
                         {
                             soluong-=1;
+                            int k =0;
+                            if(radioButtonLon.isChecked()){
+                                k=5;
+                            }
+                            tvSoluong.setText(soluong+"");
+                            btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
                         }
-                        int k =0;
-                        if(radioButtonVua.isChecked()){
-                            k=5;
+                        else   {
+                            int k =0;
+                            if(radioButtonLon.isChecked()){
+                                k=5;
+                            }
+                            tvSoluong.setText(soluong+"");
+                            btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
                         }
-                        tvSoluong.setText(soluong+"");
-                        btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
+
                     }
                 });
 
