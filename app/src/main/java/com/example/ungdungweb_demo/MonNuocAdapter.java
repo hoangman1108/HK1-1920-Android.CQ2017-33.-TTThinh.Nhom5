@@ -195,92 +195,97 @@ public class MonNuocAdapter extends BaseAdapter{
             }
         });
 
-        viewHolder.btnGia2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                soluong = 1;
-                giagoc = "";
-                final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.dialog_mua);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.setCanceledOnTouchOutside(true);
+        if(!viewHolder.tvTenMon2.getText().toString().isEmpty())
+        {
+            viewHolder.btnGia2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    soluong = 1;
+                    giagoc = "";
+                    final Dialog dialog = new Dialog(context);
+                    dialog.setContentView(R.layout.dialog_mua);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.setCanceledOnTouchOutside(true);
 
-                final RadioButton radioButtonVua = dialog.findViewById(R.id.dialog_radio_vua);
-                final RadioButton radioButtonLon = dialog.findViewById(R.id.dialog_radio_lon);
-                Button btnsub = dialog.findViewById(R.id.dia_btn_mua_sub);
-                final Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
-                final Button btnMua = dialog.findViewById(R.id.dialog_btn_Mua);
-                final TextView tvSoluong = dialog.findViewById(R.id.dia_soluong);
+                    final RadioButton radioButtonVua = dialog.findViewById(R.id.dialog_radio_vua);
+                    final RadioButton radioButtonLon = dialog.findViewById(R.id.dialog_radio_lon);
+                    Button btnsub = dialog.findViewById(R.id.dia_btn_mua_sub);
+                    final Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
+                    final Button btnMua = dialog.findViewById(R.id.dialog_btn_Mua);
+                    final TextView tvSoluong = dialog.findViewById(R.id.dia_soluong);
 
-                final TextView tvGia = dialog.findViewById(R.id.dialog_tvGia);
-                final TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
+                    final TextView tvGia = dialog.findViewById(R.id.dialog_tvGia);
+                    final TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
 
-                tvTen.setText(viewHolder.tvTenMon2.getText());
-                tvGia.setText(viewHolder.btnGia2.getText());
-                btnMua.setText(viewHolder.btnGia2.getText());
+                    tvTen.setText(viewHolder.tvTenMon2.getText());
+                    tvGia.setText(viewHolder.btnGia2.getText());
+                    btnMua.setText(viewHolder.btnGia2.getText());
 
-                String temp = (String)tvGia.getText();
-                int i = 0;
-                while (temp.charAt(i) != '.'){
-                    giagoc += temp.charAt(i);
-                    i++;
+                    String temp = (String)tvGia.getText();
+                    int i = 0;
+                    while (temp.charAt(i) != '.'){
+                        giagoc += temp.charAt(i);
+                        i++;
+                    }
+
+                    radioButtonVua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            int k = Integer.parseInt(giagoc)+5;
+                            btnMua.setText(k*soluong+".000 đ");
+                        }
+                    });
+
+                    radioButtonLon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            btnMua.setText(Integer.parseInt(giagoc)*soluong+".000 đ");
+                        }
+                    });
+
+                    btnMua.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong,monNuoc.getHinh2()));
+                            dialog.dismiss();
+                        }
+                    });
+
+                    btnadd.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            soluong +=1;
+                            int k =0;
+                            if(radioButtonLon.isChecked()){
+                                k=5;
+                            }
+                            tvSoluong.setText(soluong+"");
+                            btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
+                        }
+                    });
+
+                    btnsub.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(soluong>1)
+                            {
+                                soluong-=1;
+                            }
+                            int k =0;
+                            if(radioButtonVua.isChecked()){
+                                k=5;
+                            }
+                            tvSoluong.setText(soluong+"");
+                            btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
+                        }
+                    });
+
+                    dialog.show();
                 }
-
-                radioButtonVua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        int k = Integer.parseInt(giagoc)+5;
-                        btnMua.setText(k*soluong+".000 đ");
-                    }
-                });
-
-                radioButtonLon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        btnMua.setText(Integer.parseInt(giagoc)*soluong+".000 đ");
-                    }
-                });
-
-                btnMua.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        MainActivity.gioHangArrayList.add(new GioHang(tvTen.getText().toString(),btnMua.getText().toString(),soluong,monNuoc.getHinh2()));
-                        dialog.dismiss();
-                    }
-                });
-
-                btnadd.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        soluong +=1;
-                        int k =0;
-                        if(radioButtonLon.isChecked()){
-                            k=5;
-                        }
-                        tvSoluong.setText(soluong+"");
-                        btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
-                    }
-                });
-
-                btnsub.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(soluong>1)
-                        {
-                            soluong-=1;
-                        }
-                        int k =0;
-                        if(radioButtonVua.isChecked()){
-                            k=5;
-                        }
-                        tvSoluong.setText(soluong+"");
-                        btnMua.setText(soluong*(k+Integer.parseInt(giagoc)) +".000 đ");
-                    }
-                });
-
-                dialog.show();
-            }
-        });
+            });
+        }else {
+            viewHolder.btnGia2.setBackgroundColor(Color.TRANSPARENT);
+        }
 
         return convertView;
     }

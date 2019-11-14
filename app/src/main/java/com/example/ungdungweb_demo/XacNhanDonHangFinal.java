@@ -1,13 +1,21 @@
 package com.example.ungdungweb_demo;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 public class XacNhanDonHangFinal extends AppCompatActivity {
 
@@ -27,6 +35,8 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         btnCoupon = findViewById(R.id.btn_xacnhan_giamgia);
         tvTien = findViewById(R.id.tv_xacnhan_tongtien);
 
+
+        Log.d("MANMEO",Dem()+"-"+QuanLy.index);
        xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,QuanLy.donHangArrayList.get(QuanLy.index).getDonhang());
         listMon.setAdapter(xacNhanAdapter);
         int S = TongTien();
@@ -35,11 +45,12 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         btnXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                RequestXacnhan requestXacnhan = new RequestXacnhan(MainActivity.userInforArrayList.get(MainActivity.index).getPhone(),"accept");
-//                QuanLy.mData.child("XacNhan").push().setValue(requestXacnhan);
-
-//                RequestXacnhan requestXacnhan = new RequestXacnhan(QuanLy.donHangArrayList.get(QuanLy.index).getSdt(),"xác nhận",);
-//                QuanLy.mData.child("RequestDonHang").setValue();
+                RequestXacnhan requestXacnhan = MainActivity.requestXacnhanArrayList.get(QuanLy.index);
+                requestXacnhan.request = "xác nhận";
+                MainActivity.requestXacnhanArrayList.get(QuanLy.index).request="xác nhận";
+                QuanLy.mData.child("RequestDonHang").child(MainActivity.keyRequest.get(QuanLy.index)).setValue(requestXacnhan);
+                Log.d("INDEX",QuanLy.index+"");
+                Toast.makeText(XacNhanDonHangFinal.this, "xác nhận thành công", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -57,6 +68,8 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         return tong;
     }
 
+
+
     public static String getStringTien(String tien){
         String temp = "";
         for(int i = 0;i<tien.length();i++){
@@ -66,5 +79,15 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
             temp+=tien.charAt(i);
         }
         return temp;
+    }
+
+    public int Dem(){
+        int k = 0;
+        for(int i = 0;i<QuanLy.index;i++){
+            if(MainActivity.requestXacnhanArrayList.get(i).request.equals("chờ...")){
+                k++;
+            }
+        }
+        return k;
     }
 }

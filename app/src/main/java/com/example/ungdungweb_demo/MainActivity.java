@@ -55,13 +55,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<RequestXacnhan> requestXacnhanArrayList = new ArrayList<>();
 
+    public static ArrayList<String> keyRequest = new ArrayList<>();
+
 
     public static int index=-1;
 
     public static DatabaseReference mData =FirebaseDatabase.getInstance().getReference();
     public static FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    StorageReference storageRef = storage.getReferenceFromUrl("gs://database-projectandroid.appspot.com");
+    public static StorageReference storageRef = storage.getReferenceFromUrl("gs://database-projectandroid.appspot.com");
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
@@ -90,12 +92,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intentA);
             finish();
         }
-//        else
-//        if(index == -2){
-//            Intent intentA = new Intent(this, QuanLy.class);
-//            startActivity(intent);
-//            finish();
-//        }
+
+//        Intent intentacept = getIntent();
+//        index = intent.getIntExtra("key",0);
+
 
         //trang dể kết hiển thị các trang khác
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigationview);
@@ -238,11 +238,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+        requestXacnhanArrayList.clear();
         mData.child("RequestDonHang").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 RequestXacnhan requestXacnhan = dataSnapshot.getValue(RequestXacnhan.class);
                 requestXacnhanArrayList.add(requestXacnhan);
+                keyRequest.add(dataSnapshot.getKey());
+                Log.d("SDT",requestXacnhan.sdt);
             }
 
             @Override

@@ -25,11 +25,12 @@ import java.util.List;
 
 public class XacNhanDonHang extends AppCompatActivity {
 
-    ArrayAdapter<String> adapter;
+    public static ArrayList<Integer> arraykeyXacnhan = new ArrayList<>();
     ListView lvdonhang;
     ArrayList<String> arr;
     ThongTinDonAdapter thongTinDonAdapter;
-
+    public static ArrayList<DonHang> hangArrayList = new ArrayList<>();
+    int m = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +40,10 @@ public class XacNhanDonHang extends AppCompatActivity {
 
         arr = new ArrayList<>();
 
+        AddListBase();
+        thongTinDonAdapter = new ThongTinDonAdapter(this, R.layout.dia_thongtin_nhan_don_hang,hangArrayList);
 
-        for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
-            arr.add("Có đơn hàng từ sđt: "+QuanLy.donHangArrayList.get(i).getSdt());
-        }
-
-        thongTinDonAdapter = new ThongTinDonAdapter(this, R.layout.dia_thongtin_nhan_don_hang,QuanLy.donHangArrayList);
-
-//        adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arr);
         lvdonhang.setAdapter(thongTinDonAdapter);
-//        adapter.notifyDataSetChanged();
 
         lvdonhang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -58,21 +53,29 @@ public class XacNhanDonHang extends AppCompatActivity {
             }
         });
 
-//        QuanLy.mData.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                    adapter.clear();
-//                    for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
-//                        adapter.add("Có đơn hàng từ sđt: "+QuanLy.donHangArrayList.get(i).getSdt());
-//                    }
-//                    adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+
+        QuanLy.mData.child("RequestDonHang").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    AddListBase();
+                    thongTinDonAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
+
+    public void AddListBase(){
+        hangArrayList.clear();
+        for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
+            if(MainActivity.requestXacnhanArrayList.get(i).request.equals("chờ...")){
+                hangArrayList.add(QuanLy.donHangArrayList.get(i));
+            }
+        }
+    }
+
 }

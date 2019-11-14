@@ -55,6 +55,7 @@ public class XacNhanAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHoler viewHolder;
+        QuanLy.index = position;
         if (convertView == null){
             viewHolder = new ViewHoler();
             LayoutInflater inflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -73,6 +74,7 @@ public class XacNhanAdapter extends BaseAdapter {
         viewHolder.gia.setText(gioHang.getGia());
         viewHolder.soluong.setText(gioHang.getSoluong()+"");
         Picasso.get().load(list.get(position).getHinh()).into(viewHolder.imgHinh);
+
 
         return convertView;
     }

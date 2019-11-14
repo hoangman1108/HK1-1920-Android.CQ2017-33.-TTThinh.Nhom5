@@ -63,6 +63,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edt_signup_ten"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="VD: Nguyễn Bảo Phát"
@@ -78,6 +79,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edt_signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="VD: phat_food@gmail.com"
@@ -92,6 +94,7 @@
                 android:textSize="26sp"
                 android:textStyle="bold" />
             <EditText
+                android:id="@+id/edt_signup_sdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="VD: 0351298321"
@@ -107,9 +110,53 @@
                 android:textSize="26sp"
                 android:textStyle="bold" />
             <EditText
+                android:id="@+id/edt_signup_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="11/08/1998"
+                android:textSize="24sp"
+                android:layout_marginBottom="20dp"
+                />
+            <RadioGroup
+                android:id="@+id/dialog_detail_gender"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:id="@+id/radio_signup_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textSize="24sp"/>
+                <RadioButton
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:id="@+id/radio_signup_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Female"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:textColor="#3c2f2f"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/edt_signup_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="11/08/1998"
+                android:inputType="textPassword"
                 android:textSize="24sp"
                 android:layout_marginBottom="20dp"
                 />

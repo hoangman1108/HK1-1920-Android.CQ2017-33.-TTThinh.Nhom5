@@ -35,12 +35,12 @@ public class MenuMonFragment extends ListFragment {
         return  view;
     }
 
-    @Override
-    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
-
-        Toast.makeText(getActivity(), "Honag man"+position, Toast.LENGTH_SHORT).show();
-        super.onListItemClick(l, v, position, id);
-    }
+//    @Override
+//    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+//
+//        Toast.makeText(getActivity(), "Honag man"+position, Toast.LENGTH_SHORT).show();
+//        super.onListItemClick(l, v, position, id);
+//    }
 
     void AddData(){
 //        monNuocArrayList.add(new MonNuoc("38.000","37.000","Machiato Mango","Machiato co..."));

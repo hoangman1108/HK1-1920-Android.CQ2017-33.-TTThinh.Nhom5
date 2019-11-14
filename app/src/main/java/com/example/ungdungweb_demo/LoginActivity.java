@@ -82,6 +82,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             {
                 if (pass.equals( MainActivity.userInforArrayList.get(i).getPassword())) {
 
+                    Intent intent = new Intent(this, MainActivity.class);
+//                    intent.putExtra("key",i);
+//                    startActivity(intent);
                            MainActivity.index = i;
                            return true;
 

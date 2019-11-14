@@ -27,4 +27,28 @@
             android:background="@drawable/dia_bg"
             android:textSize="30dp"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="Thêm món"
+            android:textAllCaps="false"
+            android:background="@drawable/dia_bg"
+            android:id="@+id/btn_quanly_them"
+            android:textSize="30dp"/>
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="Xóa món"
+            android:textAllCaps="false"
+            android:id="@+id/btn_quanly_xoa_mon"
+            android:background="@drawable/dia_bg"
+            android:textSize="30dp"/>
+    </LinearLayout>
+
+
 </LinearLayout>
