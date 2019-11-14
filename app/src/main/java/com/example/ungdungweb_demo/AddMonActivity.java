@@ -70,6 +70,8 @@ public class AddMonActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+
+
             }
         });
 
@@ -177,6 +179,9 @@ public class AddMonActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

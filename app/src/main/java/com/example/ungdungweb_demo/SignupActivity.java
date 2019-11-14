@@ -73,10 +73,19 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(this, "Sai email", Toast.LENGTH_SHORT).show();
                     return false;
                 }
+
             }
             if (email.charAt(i) == ' ') {
                 Toast.makeText(this, "Sai email", Toast.LENGTH_SHORT).show();
                 return false;
+            }
+            for (int k = 0; k <  MainActivity.userInforArrayList.size(); k++)
+            {
+                if (email.equals( MainActivity.userInforArrayList.get(k).getEmail()) )
+                {
+                    Toast.makeText(this,"Email đã tồn tại",Toast.LENGTH_LONG).show();
+                    return false;
+                }
             }
         }
 
@@ -89,6 +98,14 @@ public class SignupActivity extends AppCompatActivity {
         for(int i = 0;i<10;i++){
             if(sdt.charAt(i)<'0' || sdt.charAt(i)>'9'){
                 Toast.makeText(this, "Vui lòng nhập số điện thoại hợp lệ", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+        for (int k = 0; k <  MainActivity.userInforArrayList.size(); k++)
+        {
+            if (sdt.equals( MainActivity.userInforArrayList.get(k).getPhone()) )
+            {
+                Toast.makeText(this,"Số điện thoại đã tồn tại",Toast.LENGTH_LONG).show();
                 return false;
             }
         }

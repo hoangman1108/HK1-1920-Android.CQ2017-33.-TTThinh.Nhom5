@@ -5,49 +5,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".QuanLy">
+    tools:context=".QuanLy"
+    android:padding="20dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:layout_width="200dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="200dp"
             android:text="Đơn Hàng"
+            android:textColor="#ffffff"
             android:textAllCaps="false"
             android:background="@drawable/dia_bg"
             android:id="@+id/btn_quanly_DonHang"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:drawableTop="@drawable/don_hang_quan_ly"/>
         <Button
+            android:layout_weight="1"
             android:layout_marginLeft="10dp"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="200dp"
             android:text="Menu"
+            android:textColor="#ffffff"
             android:textAllCaps="false"
             android:id="@+id/btn_quanly_Menu"
             android:background="@drawable/dia_bg"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:drawableTop="@drawable/don_hang_quan_ly"/>
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:layout_width="200dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="200dp"
             android:text="Thêm món"
+            android:textColor="#ffffff"
             android:textAllCaps="false"
             android:background="@drawable/dia_bg"
             android:id="@+id/btn_quanly_them"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:drawableTop="@drawable/don_hang_quan_ly"/>
         <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_marginLeft="10dp"
-            android:layout_width="200dp"
             android:layout_height="200dp"
             android:text="Xóa món"
+            android:textColor="#ffffff"
             android:textAllCaps="false"
             android:id="@+id/btn_quanly_xoa_mon"
             android:background="@drawable/dia_bg"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:drawableTop="@drawable/don_hang_quan_ly"/>
+
     </LinearLayout>
 
 
