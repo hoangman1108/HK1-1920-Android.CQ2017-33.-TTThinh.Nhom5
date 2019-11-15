@@ -5,33 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.AddMonActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_vertical">
 
 
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/image_input"
+            android:id="@+id/imgview_dialog_themmon"/>
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm ảnh minh họa"
+            android:id="@+id/btn_add_mon_them"
+            android:textAllCaps="false"/>
         <EditText
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Tên món"
             android:textSize="24sp"
             android:id="@+id/edt_dialog_themmon_ten"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Giá bán"
-            android:textSize="24sp"
-            android:id="@+id/edt_dialog_themmon_gia"/>
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@drawable/camara"
-            android:id="@+id/imgview_dialog_themmon"/>
-
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thêm"
-            android:id="@+id/btn_add_mon_them"
-            android:textAllCaps="false"/>
+                android:text="Giá bán"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal">
+
+        </TextView>
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Size nhỏ"
+                    android:textSize="24sp"
+                    android:id="@+id/edt_dialog_themmon_gia"/>
+                <EditText
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Size vừa"
+                    android:textSize="24sp"/>
+
+        </LinearLayout>
+        <EditText
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textSize="24sp"
+            android:hint="Mô tả sản phẩm"/>
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng món"
+                />
+
 
 
 
