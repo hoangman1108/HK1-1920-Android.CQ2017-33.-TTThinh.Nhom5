@@ -57,7 +57,11 @@ public class ThongTinDonAdapter extends BaseAdapter {
         }
 
         DonHang donHang = list.get(position);
-        viewHolder.sdtnguoigui.setText("Có đơn hàng từ Sđt: "+donHang.getSdt());
+        if(QuanLy.xacdinhmandatarequest == 1){
+            viewHolder.sdtnguoigui.setText("Có đơn hàng từ Sđt: "+donHang.getSdt());
+        }else if(QuanLy.xacdinhmandatarequest == 2){
+            viewHolder.sdtnguoigui.setText("Đơn hàng đã xác nhận: "+donHang.getSdt());
+        }
         viewHolder.tvTime.setText(donHang.getTime());
 
         return convertView;

@@ -55,7 +55,6 @@ public class XacNhanAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHoler viewHolder;
-        QuanLy.index = position;
         if (convertView == null){
             viewHolder = new ViewHoler();
             LayoutInflater inflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);

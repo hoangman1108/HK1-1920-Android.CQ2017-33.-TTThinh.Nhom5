@@ -37,7 +37,8 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
 
 
         Log.d("MANMEO",Dem()+"-"+QuanLy.index);
-       xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,QuanLy.donHangArrayList.get(QuanLy.index).getDonhang());
+//        xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,QuanLy.donHangArrayList.get(QuanLy.index).getDonhang());
+        xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,XacNhanDonHang.hangArrayList.get(QuanLy.index).getDonhang());
         listMon.setAdapter(xacNhanAdapter);
         int S = TongTien();
         tvTien.setText(S+".000 đ");
@@ -45,16 +46,28 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         btnXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RequestXacnhan requestXacnhan = MainActivity.requestXacnhanArrayList.get(QuanLy.index);
-                requestXacnhan.request = "xác nhận";
-                MainActivity.requestXacnhanArrayList.get(QuanLy.index).request="xác nhận";
-                QuanLy.mData.child("RequestDonHang").child(MainActivity.keyRequest.get(QuanLy.index)).setValue(requestXacnhan);
+                RequestXacnhan requestXacnhan = MainActivity.requestXacnhanArrayList.get(Dem());
                 Log.d("INDEX",QuanLy.index+"");
+                if(QuanLy.xacdinhmandatarequest == 1){
+                    requestXacnhan.request = "xác nhận";
+                    MainActivity.requestXacnhanArrayList.get(Dem()).request="xác nhận";
+                }else if(QuanLy.xacdinhmandatarequest == 2){
+                    requestXacnhan.request = "đã thanh toán";
+                    MainActivity.requestXacnhanArrayList.get(Dem()).request="đã thanh toán";
+                    DoanhThu doanhThu = new DoanhThu(requestXacnhan.time,btnTien.getText().toString(),requestXacnhan.sdt);
+                    QuanLy.mData.child("DoanhThu").push().setValue(doanhThu);
+
+                }
+                QuanLy.mData.child("RequestDonHang").child(MainActivity.keyRequest.get(Dem())).setValue(requestXacnhan);
+                Log.d("INDEX",Dem()+"");
                 Toast.makeText(XacNhanDonHangFinal.this, "xác nhận thành công", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
     }
+
+
     public static int TongTien(){
         int tong = 0;
         String tien ;
@@ -82,12 +95,11 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
     }
 
     public int Dem(){
-        int k = 0;
-        for(int i = 0;i<QuanLy.index;i++){
-            if(MainActivity.requestXacnhanArrayList.get(i).request.equals("chờ...")){
-                k++;
+        for(int i = 0;i<MainActivity.requestXacnhanArrayList.size();i++){
+            if(MainActivity.requestXacnhanArrayList.get(i).time.equals(XacNhanDonHang.hangArrayList.get(QuanLy.index).getTime())){
+                return i;
             }
         }
-        return k;
+        return -1;
     }
 }

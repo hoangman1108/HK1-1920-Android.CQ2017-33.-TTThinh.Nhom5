@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ public class HomeFragment extends Fragment {
     private ImageView imgbtAva;
     public MainActivity mainActivity;
     TextView tvName;
+    ViewFlipper viewFlipper;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -33,8 +35,9 @@ public class HomeFragment extends Fragment {
         btnDiaChi = view.findViewById(R.id.btn_fragment_main_DiaChi);
         btnTichDiem = view.findViewById(R.id.btn_fragment_main_TichDiem);
         btnRequest = view.findViewById(R.id.btn_fragment_main_thongbao);
-
+        viewFlipper = view.findViewById(R.id.vflipper_slideshow);
         tvName=view.findViewById(R.id.tv_fragment_main_name);
+        int images[] ={R.drawable.trasua1, R.drawable.trasua2, R.drawable.trasua3};
 
         imgbtAva = view.findViewById(R.id.imgAva);
 
@@ -43,6 +46,7 @@ public class HomeFragment extends Fragment {
             tvName.setText(MainActivity.userInforArrayList.get(MainActivity.index).getName());
 
         }
+
 
 
 //        imgbtAva.setOnClickListener(new View.OnClickListener(){
@@ -95,7 +99,30 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        for(int i = 0; i<images.length;i++){
+            flipperImages(images[i]);
+        }
+
+        //prefer foreach
+        for (int image: images){
+            flipperImages(image);
+        }
+
         return view;
+    }
+
+    public void flipperImages(int image){
+        ImageView imageView = new ImageView(getContext());
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
+
+        //animation
+        viewFlipper.setInAnimation(getContext(),R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(getContext(),R.anim.slide_in_right);
     }
 
     @Override

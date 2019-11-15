@@ -71,8 +71,14 @@ public class XacNhanDonHang extends AppCompatActivity {
 
     public void AddListBase(){
         hangArrayList.clear();
+        String temp = "";
+        if(QuanLy.xacdinhmandatarequest == 1){
+            temp = "chờ...";
+        }else if(QuanLy.xacdinhmandatarequest == 2){
+            temp = "xác nhận";
+        }
         for(int i = 0;i<QuanLy.donHangArrayList.size();i++){
-            if(MainActivity.requestXacnhanArrayList.get(i).request.equals("chờ...")){
+            if(MainActivity.requestXacnhanArrayList.get(i).request.equals(temp)){
                 hangArrayList.add(QuanLy.donHangArrayList.get(i));
             }
         }
