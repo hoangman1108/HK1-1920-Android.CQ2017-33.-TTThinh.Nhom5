@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo;
+package com.example.ungdungweb_demo.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +14,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
+import com.example.ungdungweb_demo.Coupon;
+import com.example.ungdungweb_demo.DonHang;
+import com.example.ungdungweb_demo.GioHangAdapter;
+import com.example.ungdungweb_demo.R;
+import com.example.ungdungweb_demo.RequestXacnhan;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 public class GioHangFragment extends ListFragment{
@@ -38,7 +42,7 @@ public class GioHangFragment extends ListFragment{
         btnTongTien = view.findViewById(R.id.btn_fragment_giohang_tongtien);
         btnGiamGia = view.findViewById(R.id.btn_fragment_giohang_giamgia);
         btnXacNhan = view.findViewById(R.id.btn_xacnhandachangfinal);
-        adaptergiohang = new GioHangAdapter(getActivity(),R.layout.dia_don_hang,MainActivity.gioHangArrayList);
+        adaptergiohang = new GioHangAdapter(getActivity(),R.layout.dia_don_hang, MainActivity.gioHangArrayList);
         setListAdapter(adaptergiohang);
 
 

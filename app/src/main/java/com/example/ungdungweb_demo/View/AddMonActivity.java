@@ -1,40 +1,32 @@
-package com.example.ungdungweb_demo;
+package com.example.ungdungweb_demo.View;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.ungdungweb_demo.MonNuoc;
+import com.example.ungdungweb_demo.QuanLy;
+import com.example.ungdungweb_demo.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class AddMonActivity extends AppCompatActivity {
@@ -90,7 +82,7 @@ public class AddMonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();
-                final StorageReference mountainsRef =MainActivity.storageRef.child("image"+calendar.getTimeInMillis()+".png");
+                final StorageReference mountainsRef = MainActivity.storageRef.child("image"+calendar.getTimeInMillis()+".png");
 
                 anh.setDrawingCacheEnabled(true);
                 anh.buildDrawingCache();

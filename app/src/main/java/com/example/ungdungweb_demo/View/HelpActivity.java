@@ -1,8 +1,10 @@
-package com.example.ungdungweb_demo;
+package com.example.ungdungweb_demo.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.ungdungweb_demo.R;
 
 public class HelpActivity extends AppCompatActivity {
 

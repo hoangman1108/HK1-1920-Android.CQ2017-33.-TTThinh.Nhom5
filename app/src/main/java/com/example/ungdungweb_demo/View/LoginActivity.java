@@ -1,7 +1,5 @@
-package com.example.ungdungweb_demo;
+package com.example.ungdungweb_demo.View;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,11 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-
-import java.util.ArrayList;
+import com.example.ungdungweb_demo.QuanLy;
+import com.example.ungdungweb_demo.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -69,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         else if (v == btnClickSignup){
-            Intent intent = new Intent(this,SignupActivity.class);
+            Intent intent = new Intent(this, SignupActivity.class);
             startActivity(intent);
         }
     }
