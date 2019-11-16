@@ -6,99 +6,100 @@
     android:layout_width="match_parent"
     android:id="@+id/drawerlayout"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context=".MainActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4b3832"
+        android:background="#fff4e6"
         android:orientation="vertical">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="6"
-            android:orientation="horizontal">
+            android:background="@android:color/white"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="bottom"
-                android:paddingLeft="20dp"
-                android:paddingBottom="20dp"
-                android:text="ĐĂNG NHẬP"
-                android:textColor="#fff4e6"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:src="@drawable/avatar_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#fff4e6"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginBottom="40dp">
+            android:layout_height="0dp"
+            android:layout_weight="5">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:text="Mời bạn nhập tên đăng nhập và mật khẩu:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email hoặc số điện thoại:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtAccount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="VD: phat_food@gmail.com"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mật khẩu:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email hoặc số điện thoại:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtPass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
+                <EditText
+                    android:id="@+id/edtAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:hint="phat_food@gmail.com"
+                    android:textSize="24sp" />
 
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đăng nhập"
-                android:textSize="26dp"
-                android:gravity="bottom"
-                />
-            <Button
-                android:id="@+id/btnSignup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đăng ký"
-                android:textSize="26dp"
-                android:gravity="bottom"
-                />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mật khẩu:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="textPassword"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="bottom"
+                    android:text="Đăng nhập"
+                    android:textSize="26dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="hoặc"
+                    android:textSize="24dp" />
+
+                <Button
+
+                    android:id="@+id/btnSignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="bottom"
+                    android:text="Đăng ký"
+                    android:textSize="26dp" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
