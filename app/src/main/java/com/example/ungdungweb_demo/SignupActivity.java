@@ -2,13 +2,19 @@ package com.example.ungdungweb_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -17,6 +23,7 @@ public class SignupActivity extends AppCompatActivity {
     private Button btnsignup;
     private RadioButton raMale, raFemale;
     private String gender = "";
+    final Calendar myCalendar = Calendar.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +38,17 @@ public class SignupActivity extends AppCompatActivity {
         btnsignup = findViewById(R.id.btnSignup);
 
         edtpass = findViewById(R.id.edt_signup_pass);
+
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+                updateLabel();
+            }
+        };
 
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +70,25 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        edtDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(SignupActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
     }
+
+    private void updateLabel() {
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        edtDate.setText(sdf.format(myCalendar.getTime()));
+    }
+
+
 
     public boolean Check() {
         if (edtName.getText().toString().isEmpty()) {
