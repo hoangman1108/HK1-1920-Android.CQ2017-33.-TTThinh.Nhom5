@@ -30,36 +30,14 @@
             android:hint="Tên món"
             android:textSize="24sp"
             android:id="@+id/edt_dialog_themmon_ten"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-                android:text="Giá bán"
-                android:textSize="24dp"
-                android:layout_gravity="center_horizontal">
-
-        </TextView>
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-                android:orientation="horizontal">
                 <EditText
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Size vừa"
+                    android:hint="Giá bán"
                     android:textSize="24sp"
                     android:id="@+id/edt_dialog_themmon_gia"/>
-                <EditText
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Size lớn"
-                    android:textSize="24sp"/>
-
-        </LinearLayout>
         <EditText
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"

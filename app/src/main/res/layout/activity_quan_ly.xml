@@ -7,6 +7,9 @@
     android:orientation="vertical"
     tools:context=".QuanLy"
     android:padding="20dp">
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,7 +23,7 @@
             android:background="@drawable/dia_bg"
             android:id="@+id/btn_quanly_DonHang"
             android:textSize="30dp"
-            android:drawableTop="@drawable/don_hang_quan_ly"/>
+            android:drawableTop="@drawable/donhang_icon"/>
         <Button
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
@@ -49,7 +52,7 @@
             android:background="@drawable/dia_bg"
             android:id="@+id/btn_quanly_daxacnhan"
             android:textSize="30dp"
-            android:drawableTop="@drawable/don_hang_quan_ly"/>
+            android:drawableTop="@drawable/xacnhan_icon"/>
         <Button
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -61,9 +64,17 @@
             android:id="@+id/btn_quanly_doanhthu"
             android:background="@drawable/dia_bg"
             android:textSize="30dp"
-            android:drawableTop="@drawable/don_hang_quan_ly"/>
+            android:drawableTop="@drawable/doanhthu_icon"/>
 
     </LinearLayout>
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:text="Đăng xuất">
 
+    </Button>
 
 </LinearLayout>
