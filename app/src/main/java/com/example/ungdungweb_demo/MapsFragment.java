@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

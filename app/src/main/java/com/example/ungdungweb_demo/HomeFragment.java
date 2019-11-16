@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,10 +18,6 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.example.ungdungweb_demo.Coupon;
-import com.example.ungdungweb_demo.R;
-import com.example.ungdungweb_demo.TichDiem;
 
 public class HomeFragment extends Fragment {
     ImageButton btnDatHang, btnCoupon, btnTichDiem, btnDiaChi, btnRequest;

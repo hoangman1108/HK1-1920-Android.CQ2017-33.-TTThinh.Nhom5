@@ -1,14 +1,9 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ListView;
-
-import com.example.ungdungweb_demo.R;
-import com.example.ungdungweb_demo.RequestAdapter;
-import com.example.ungdungweb_demo.RequestXacnhan;
-import com.example.ungdungweb_demo.View.MainActivity;
 
 import java.util.ArrayList;
 

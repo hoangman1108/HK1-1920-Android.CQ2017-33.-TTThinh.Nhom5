@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

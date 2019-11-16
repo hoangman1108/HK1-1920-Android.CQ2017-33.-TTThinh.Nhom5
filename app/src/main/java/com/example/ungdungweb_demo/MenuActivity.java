@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,10 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.ungdungweb_demo.MonNuoc;
-import com.example.ungdungweb_demo.QuanLy;
-import com.example.ungdungweb_demo.R;
-import com.example.ungdungweb_demo.SuaMonNuocAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

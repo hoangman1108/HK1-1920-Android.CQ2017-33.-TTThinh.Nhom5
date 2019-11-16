@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ungdungweb_demo.View.GioHangFragment;
-import com.example.ungdungweb_demo.View.MainActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

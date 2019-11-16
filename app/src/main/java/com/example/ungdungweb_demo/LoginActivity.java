@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.ungdungweb_demo.QuanLy;
-import com.example.ungdungweb_demo.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.fragment.app.ListFragment;
 
 import com.example.ungdungweb_demo.MonNuocAdapter;
 import com.example.ungdungweb_demo.R;
-import com.example.ungdungweb_demo.View.MainActivity;
+import com.example.ungdungweb_demo.MainActivity;
 
 public class MenuMonFragment extends ListFragment {
 

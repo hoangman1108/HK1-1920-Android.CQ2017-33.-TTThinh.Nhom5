@@ -10,8 +10,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ungdungweb_demo.View.MainActivity;
-
 public class XacNhanDonHangFinal extends AppCompatActivity {
 
     XacNhanAdapter xacNhanAdapter;

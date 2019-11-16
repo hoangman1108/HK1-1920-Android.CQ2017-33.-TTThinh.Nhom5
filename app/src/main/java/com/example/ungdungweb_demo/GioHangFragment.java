@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
-
-import com.example.ungdungweb_demo.Coupon;
-import com.example.ungdungweb_demo.DonHang;
-import com.example.ungdungweb_demo.GioHangAdapter;
-import com.example.ungdungweb_demo.R;
-import com.example.ungdungweb_demo.RequestXacnhan;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

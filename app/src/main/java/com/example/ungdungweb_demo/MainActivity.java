@@ -1,4 +1,4 @@
-package com.example.ungdungweb_demo.View;
+package com.example.ungdungweb_demo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,12 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.example.ungdungweb_demo.Detail_Info;
-import com.example.ungdungweb_demo.GioHang;
-import com.example.ungdungweb_demo.MonNuoc;
-import com.example.ungdungweb_demo.R;
-import com.example.ungdungweb_demo.RequestXacnhan;
-import com.example.ungdungweb_demo.UserInfor;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.ChildEventListener;

@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ungdungweb_demo.View.MenuActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

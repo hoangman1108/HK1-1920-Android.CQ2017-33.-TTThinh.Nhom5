@@ -13,8 +13,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.example.ungdungweb_demo.View.MainActivity;
-
 public class Detail_Info extends AppCompatActivity {
 
     Button btn_change;
