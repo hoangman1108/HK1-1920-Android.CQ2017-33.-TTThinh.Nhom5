@@ -7,6 +7,7 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:elevation="10dp"
         android:paddingBottom="10dp"
         android:background="#FFFFFF"
         android:layout_width="match_parent"
@@ -92,6 +93,7 @@
 
 
             <GridLayout
+                android:elevation="10dp"
                 android:foregroundGravity="center_horizontal"
                 android:id="@+id/border"
                 android:layout_width="match_parent"
@@ -113,6 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp">
                         <ImageButton
+                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_DatHang"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -137,6 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp">
                         <ImageButton
+                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_Coupon"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -159,6 +163,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <ImageButton
+                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_TichDiem"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -191,6 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <ImageButton
+                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_DiaChi"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -215,6 +221,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageButton
+                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_thongbao"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -236,7 +243,10 @@
 
             </GridLayout>
 
+
+
             <LinearLayout
+                android:elevation="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:orientation="vertical">

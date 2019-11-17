@@ -16,6 +16,8 @@
             android:background="@drawable/image_input"
             android:id="@+id/imgview_dialog_themmon"/>
         <Button
+            android:padding="10dp"
+            style="@style/Theme.Design.Light"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,6 +49,11 @@
             android:textSize="24sp"
             android:hint="Mô tả sản phẩm"/>
         <Button
+
+            android:textColor="#fff"
+            android:background="@drawable/custom_button"
+            android:padding="10dp"
+            style="@style/Theme.Design.Light"
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"

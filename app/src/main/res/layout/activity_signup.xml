@@ -43,21 +43,20 @@
             android:layout_marginBottom="40dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
-                android:text="Vui lòng điền đầy đủ thông tin bên dưới"
+                android:text="Đăng ký"
                 android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textSize="28sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Họ và tên:"
                 android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textSize="26sp" />
 
             <EditText
                 android:layout_marginHorizontal="30dp"
@@ -73,8 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="Email:"
                 android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textSize="26sp" />
 
             <EditText
                 android:layout_marginHorizontal="30dp"
@@ -90,8 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="Số điện thoại:"
                 android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textSize="26sp" />
             <EditText
                 android:layout_marginHorizontal="30dp"
                 android:id="@+id/edt_signup_sdt"
@@ -107,8 +104,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ngày sinh:"
                 android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textSize="26sp" />
             <EditText
                 android:layout_marginHorizontal="30dp"
                 android:focusable="false"
@@ -128,7 +124,6 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:textStyle="bold"
                     android:textColor="#000000"
                     android:id="@+id/radio_signup_male"
                     android:layout_width="wrap_content"
@@ -136,7 +131,6 @@
                     android:text="Male"
                     android:textSize="24sp"/>
                 <RadioButton
-                    android:textStyle="bold"
                     android:textColor="#000000"
                     android:id="@+id/radio_signup_female"
                     android:layout_width="wrap_content"
@@ -153,8 +147,7 @@
                 android:layout_height="wrap_content"
                 android:text="Password:"
                 android:textColor="#3c2f2f"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textSize="26sp" />
             <EditText
                 android:layout_marginHorizontal="30dp"
                 android:id="@+id/edt_signup_pass"
@@ -165,6 +158,10 @@
                 android:layout_marginBottom="20dp"
                 />
             <Button
+                android:textColor="#fff"
+                android:background="@drawable/custom_button"
+                android:padding="10dp"
+                style="@style/Theme.Design.Light"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/btnSignup"
                 android:layout_width="wrap_content"

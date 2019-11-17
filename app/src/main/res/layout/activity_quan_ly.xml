@@ -68,11 +68,14 @@
 
     </LinearLayout>
     <Button
+        android:textColor="#FFFEFE"
+        android:padding="10dp"
+        android:background="#F7324D"
+        style="@style/Theme.Design.Light"
         android:layout_marginTop="30dp"
         android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
         android:text="Đăng xuất">
 
     </Button>

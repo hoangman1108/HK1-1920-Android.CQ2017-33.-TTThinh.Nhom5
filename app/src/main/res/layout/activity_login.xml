@@ -41,12 +41,21 @@
 
 
                 <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:text="Đăng nhập"
+                    android:textColor="#3c2f2f"
+                    android:textSize="28sp" />
+
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email hoặc số điện thoại:"
                     android:textColor="#3c2f2f"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
+                    android:textSize="26sp" />
 
                 <EditText
                     android:id="@+id/edtAccount"
@@ -62,8 +71,7 @@
                     android:layout_height="wrap_content"
                     android:text="Mật khẩu:"
                     android:textColor="#3c2f2f"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
+                    android:textSize="26sp" />
 
                 <EditText
                     android:id="@+id/edtPass"
@@ -75,12 +83,16 @@
                     android:textSize="24sp" />
 
                 <Button
+                    android:background="@drawable/custom_button"
+                    android:padding="10dp"
+                    style="@style/Theme.Design.Light"
                     android:id="@+id/btnLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:gravity="bottom"
                     android:text="Đăng nhập"
+                    android:textColor="#fff"
                     android:textSize="26dp" />
 
                 <TextView
@@ -91,7 +103,10 @@
                     android:textSize="24dp" />
 
                 <Button
-
+                    android:textColor="#fff"
+                    style="@style/Theme.Design.Light"
+                    android:background="@drawable/custom_button"
+                    android:padding="10dp"
                     android:id="@+id/btnSignup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
