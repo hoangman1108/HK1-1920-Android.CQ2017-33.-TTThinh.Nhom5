@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<String> keygiohang = new ArrayList<>();
 
+    public static ArrayList<String> keyUser = new ArrayList<>();
+
     public static int index=-1;
 
     public static DatabaseReference mData =FirebaseDatabase.getInstance().getReference();
@@ -175,12 +177,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         monNuocArrayList.clear();
         requestXacnhanArrayList.clear();
         keyRequest.clear();
+        keyUser.clear();
 
         mData.child("UserInfor").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 UserInfor userInfor = dataSnapshot.getValue(UserInfor.class);
                 userInforArrayList.add(userInfor);
+                keyUser.add(dataSnapshot.getKey());
             }
 
             @Override
