@@ -19,12 +19,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.squareup.picasso.Picasso;
+
 public class HomeFragment extends Fragment {
     ImageButton btnDatHang, btnCoupon, btnTichDiem, btnDiaChi, btnRequest;
     Button btnMenu;
     private ImageView imgbtAva;
     public MainActivity mainActivity;
     TextView tvName;
+    int stt = 0;
     ViewFlipper viewFlipper;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_main, container, false);
@@ -126,23 +129,28 @@ public class HomeFragment extends Fragment {
         });
 
         for(int i = 0; i<images.length;i++){
-            flipperImages(images[i]);
+            flipperImages();
         }
 
         //prefer foreach
-        for (int image: images){
-            flipperImages(image);
-        }
+//        for (int image: images){
+//            flipperImages();
+//        }
 
         return view;
     }
 
-    public void flipperImages(int image){
+    public void flipperImages(){
         ImageView imageView = new ImageView(getContext());
-        imageView.setBackgroundResource(image);
+//        imageView.setBackgroundResource(image);
+        Picasso.get().load(MainActivity.slideshowArrayList.get(stt).getUrl()).into(imageView);
+        stt = stt+1;
+        if(stt == 3){
+            stt =0;
+        }
 
         viewFlipper.addView(imageView);
-        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setFlipInterval(3000);
         viewFlipper.setAutoStart(true);
 
         //animation

@@ -5,6 +5,7 @@
     android:background="@drawable/bg_round_corner">
 
     <TextView
+        android:id="@+id/tv_dialog_xoa_mon"
         android:paddingHorizontal="15dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
@@ -27,7 +28,7 @@
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"/>
+            android:text="Xóa"/>
         <Button
             android:textColor="#464646"
             android:id="@+id/dialog_xoa_mon_cancel"
@@ -36,6 +37,6 @@
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancle"/>
+            android:text="Hủy"/>
     </LinearLayout>
 </LinearLayout>

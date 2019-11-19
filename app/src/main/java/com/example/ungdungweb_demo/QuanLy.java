@@ -25,7 +25,7 @@ public class QuanLy extends AppCompatActivity {
     public static DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
     public static ArrayList<String> arraykey = new ArrayList<>();
     public static ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
-    Button btnDonHang, btnMenu, btnXacnhan, btnDoanhthu,btnDangxuat, btnDoiMK;
+    Button btnDonHang, btnMenu, btnXacnhan, btnDoanhthu,btnDangxuat, btnDoiMK, btnQuangCao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ public class QuanLy extends AppCompatActivity {
         btnDoanhthu = findViewById(R.id.btn_quanly_doanhthu);
         btnDangxuat = findViewById(R.id.btn_quanly_dangxuat);
         btnDoiMK = findViewById(R.id.btn_quanly_doimk);
-
+        btnQuangCao = findViewById(R.id.btn_quanly_quangcao);
 
         DataBase();
 //        Value value = new Value(0,"");
@@ -44,6 +44,14 @@ public class QuanLy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(QuanLy.this, DoanhThuActivity.class));
+            }
+        });
+
+        btnQuangCao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(QuanLy.this, QuangCaoActivity.class));
+                finish();
             }
         });
 

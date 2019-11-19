@@ -134,7 +134,7 @@
                         android:id="@+id/radio_signup_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Male"
+                        android:text="Nam"
                         android:textSize="22sp"/>
                     <RadioButton
                         android:textColor="#000000"
@@ -143,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="22sp"
                         android:layout_marginLeft="50dp"
-                        android:text="Female"/>
+                        android:text="Nữ"/>
 
                 </RadioGroup>
 
@@ -151,7 +151,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Password:"
+                    android:text="Mật khẩu:"
                     android:textColor="#3c2f2f"
                     android:textSize="22sp" />
                 <EditText
