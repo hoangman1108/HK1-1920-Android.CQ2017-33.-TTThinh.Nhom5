@@ -24,7 +24,7 @@ public class MenuActivity extends AppCompatActivity {
     ListView listView;
     public static int keyMon = -1;
 
-    Button btnThem, btnXoa, btnSua;
+    Button btnThem, btnXoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +33,11 @@ public class MenuActivity extends AppCompatActivity {
 
         btnThem = findViewById(R.id.btn_menu_them);
         btnXoa = findViewById(R.id.btn_menu_xoa);
-        btnSua = findViewById(R.id.btn_menu_sua);
 
         listView = findViewById(R.id.list_menu);
 
         Database();
-        adapter = new SuaMonNuocAdapter(this,R.layout.dialog_mon, MainActivity.monNuocArrayList);
+        adapter = new SuaMonNuocAdapter(this,R.layout.dialog_mon, QuanLy.monNuocArrayList);
         listView.setAdapter(adapter);
 
 
@@ -46,6 +45,13 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, AddMonActivity.class));
+            }
+        });
+
+        btnXoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, DeleteMonActivity.class));
             }
         });
 

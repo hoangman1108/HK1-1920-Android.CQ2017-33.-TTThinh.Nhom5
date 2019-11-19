@@ -2,8 +2,12 @@ package com.example.ungdungweb_demo;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +20,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.List;
+
+import static android.app.Activity.RESULT_OK;
+import static androidx.core.app.ActivityCompat.startActivityForResult;
 
 public class SuaMonNuocAdapter extends BaseAdapter{
 
@@ -25,6 +33,7 @@ public class SuaMonNuocAdapter extends BaseAdapter{
     private List<MonNuoc> list;
     private  int soluong = 1;
     private String giagoc="";
+    public static final int PICK_IMAGE = 1;
 
     public SuaMonNuocAdapter(Context context, int layout, List<MonNuoc> list) {
         this.context = context;
@@ -105,6 +114,7 @@ public class SuaMonNuocAdapter extends BaseAdapter{
                 edtTen.setText(monNuoc.getTenMon1());
                 edtGia.setText(monNuoc.getGia1());
 
+
                 btnHuy.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -124,6 +134,9 @@ public class SuaMonNuocAdapter extends BaseAdapter{
                         list.get(position).setTenMon1(monNuoc1.getTenMon1());
                     }
                 });
+
+
+
                 dialog.show();
 
             }
@@ -172,4 +185,7 @@ public class SuaMonNuocAdapter extends BaseAdapter{
         });
         return convertView;
     }
+
+
+
 }

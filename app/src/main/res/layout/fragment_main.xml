@@ -7,9 +7,10 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:elevation="10dp"
         android:paddingBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="95dp">
 
@@ -24,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="welcome"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@+id/tv_fragment_main_name"
 
@@ -35,9 +36,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/guest_name"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
 
-                android:textSize="25sp"
+                android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -83,7 +84,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E2C5AD"
+        android:background="#F8D7BB"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,157 +94,175 @@
 
 
             <GridLayout
-                android:elevation="10dp"
-                android:foregroundGravity="center_horizontal"
                 android:id="@+id/border"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:background="@drawable/bg_round_corner"
+                android:elevation="10dp"
+                android:foregroundGravity="center_horizontal"
                 android:orientation="horizontal"
                 android:padding="20dp"
                 android:rowCount="2">
 
-                <LinearLayout android:orientation="horizontal"
+                <LinearLayout
                     android:layout_row="0"
                     android:layout_column="0"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp">
-                    <LinearLayout android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:elevation="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp">
+                        android:layout_marginEnd="20dp"
+                        android:orientation="vertical">
+
                         <ImageButton
-                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_DatHang"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/circle"
                             android:src="@drawable/ic_goiy"
                             android:text="@string/dat_hang" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_row="0"
-                            android:layout_column="0"
-                            android:layout_gravity="bottom"
+                            android:layout_gravity="center_horizontal"
                             android:text="Đặt Hàng"
-                            android:gravity="center_horizontal"
                             android:textAllCaps="true"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textColor="#000"
+                            android:textSize="15sp" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical"
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp">
+                        android:layout_marginEnd="20dp"
+                        android:orientation="vertical">
+
                         <ImageButton
-                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_Coupon"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/circle"
+                            android:elevation="5dp"
                             android:src="@drawable/ic_coupon"
                             android:text="@string/coupon" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
+                            android:layout_gravity="center_horizontal"
                             android:gravity="center"
                             android:text="Coupon"
                             android:textAlignment="center"
                             android:textAllCaps="true"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textColor="#000"
+                            android:textSize="15sp" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical"
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
                         <ImageButton
-                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_TichDiem"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/circle"
+                            android:elevation="5dp"
                             android:src="@drawable/ic_tichdiem"
                             android:text="@string/tich_diem" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
+                            android:layout_gravity="center_horizontal"
                             android:text="Tích Điểm"
                             android:textAlignment="center"
                             android:textAllCaps="true"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textColor="#000"
+                            android:textSize="15sp" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
 
-
-                <LinearLayout android:orientation="horizontal"
+                <LinearLayout
                     android:layout_row="1"
                     android:layout_column="0"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginEnd="20dp">
-                    <LinearLayout android:orientation="vertical"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="vertical">
+
                         <ImageButton
-                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_DiaChi"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/circle"
+                            android:elevation="5dp"
                             android:src="@drawable/ic_location"
                             android:text="@string/goi_y" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="25dp"
-                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="center_horizontal"
                             android:text="Địa chỉ"
                             android:textAlignment="center"
                             android:textAllCaps="true"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textColor="#000"
+                            android:textSize="15sp" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical"
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <ImageButton
-                            android:elevation="5dp"
                             android:id="@+id/btn_fragment_main_thongbao"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/circle"
+                            android:elevation="5dp"
                             android:src="@drawable/request"
                             android:text="@string/goi_y" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
+                            android:layout_gravity="center_horizontal"
                             android:text="Thông Báo"
                             android:textAlignment="center"
                             android:textAllCaps="true"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textColor="#000"
+                            android:textSize="15sp" />
+
+
                     </LinearLayout>
+
+
+
+
                 </LinearLayout>
 
             </GridLayout>
-
-
 
             <LinearLayout
                 android:elevation="10dp"

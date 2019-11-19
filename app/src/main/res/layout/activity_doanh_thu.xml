@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff4e6">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,12 +12,15 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textColor="#f000"/>
+
     <ListView
-        android:layout_weight="10"
+        android:id="@+id/list_doanhthu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/list_doanhthu"/>
+        android:layout_weight="10" />
+
     <Button
+        android:background="@drawable/bg_round_corner2"
         android:textAllCaps="false"
         android:layout_weight="1"
         android:id="@+id/btn_tong_doanh_thu"
@@ -25,6 +29,7 @@
         android:layout_height="0dp"
         android:text="Tổng thu nhập: 0.000 đ"/>
     <Button
+        android:background="@drawable/shadow_btn"
         android:layout_weight="1"
         android:id="@+id/btn_resetDoanhThu"
         android:layout_width="match_parent"

@@ -39,7 +39,6 @@ public class SignupActivity extends AppCompatActivity {
 
         edtpass = findViewById(R.id.edt_signup_pass);
 
-
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -78,8 +77,8 @@ public class SignupActivity extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
-
     }
+
 
     private void updateLabel() {
         String myFormat = "dd/MM/yyyy"; //In which you need put here
@@ -87,8 +86,6 @@ public class SignupActivity extends AppCompatActivity {
 
         edtDate.setText(sdf.format(myCalendar.getTime()));
     }
-
-
 
     public boolean Check() {
         if (edtName.getText().toString().isEmpty()) {

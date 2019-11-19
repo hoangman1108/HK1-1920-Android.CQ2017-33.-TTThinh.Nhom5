@@ -3,8 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:padding="15dp"
     android:background="@drawable/bg_round_corner"
     >
+
+
     <EditText
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
@@ -14,6 +17,7 @@
         android:textSize="24sp"/>
 
     <EditText
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edt_dia_sua_mon_giamon"
@@ -21,6 +25,7 @@
         android:textSize="24sp"/>
 
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
