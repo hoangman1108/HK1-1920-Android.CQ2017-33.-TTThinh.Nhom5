@@ -16,13 +16,13 @@
             android:background="@drawable/image_input"
             android:id="@+id/imgview_dialog_themmon"/>
         <Button
+            android:id="@+id/btnThemAnh"
             android:padding="10dp"
             style="@style/Theme.Design.Light"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thêm ảnh minh họa"
-            android:id="@+id/btn_add_mon_them"
             android:textAllCaps="false"/>
         <EditText
             android:layout_marginStart="30dp"
@@ -49,7 +49,7 @@
             android:textSize="24sp"
             android:hint="Mô tả sản phẩm"/>
         <Button
-
+            android:id="@+id/btn_add_mon_them"
             android:textColor="#fff"
             android:background="@drawable/custom_button"
             android:padding="10dp"

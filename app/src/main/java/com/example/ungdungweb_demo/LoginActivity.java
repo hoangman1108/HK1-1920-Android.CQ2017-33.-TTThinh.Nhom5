@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (checkLogin(account.getText().toString(),pass.getText().toString()))
             {
                 Toast.makeText(this  , "Đăng nhập thành công", Toast.LENGTH_LONG).show();
-                if(account.getText().toString().equals("vip@gmail.com")){
+                if(account.getText().toString().equals("admin")){
                     startActivity(new Intent(LoginActivity.this, QuanLy.class));
                     finish();
                 }else {

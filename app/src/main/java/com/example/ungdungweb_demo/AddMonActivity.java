@@ -33,7 +33,7 @@ public class AddMonActivity extends AppCompatActivity {
 
     EditText Name, gia;
     ImageView anh;
-    Button them;
+    Button them, themanh;
     private String urlSSS = null;
     public static final int PICK_IMAGE = 1;
     @Override
@@ -41,6 +41,7 @@ public class AddMonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mon);
 
+        themanh = findViewById(R.id.btnThemAnh);
         Name = findViewById(R.id.edt_dialog_themmon_ten);
         gia = findViewById(R.id.edt_dialog_themmon_gia);
         them = findViewById(R.id.btn_add_mon_them);
@@ -49,6 +50,21 @@ public class AddMonActivity extends AppCompatActivity {
 //        StorageReference mountainsRef =MainActivity.storageRef.child("image"+calendar.getTimeInMillis()+".png");
 
         anh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               /* Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,REQUEST_CODE_IMAGE);*/
+
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+
+
+            }
+        });
+
+        themanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                /* Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
