@@ -138,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dialog_btn_change"
-            android:text="Change"
+            android:text="Sửa đổi"
             />
         <Button
             android:textColor="#494949"
@@ -146,6 +146,6 @@
             android:id="@+id/dialog_btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"/>
+            android:text="Hủy"/>
     </LinearLayout>
 </LinearLayout>

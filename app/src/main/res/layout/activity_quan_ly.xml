@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,101 +8,135 @@
     tools:context=".QuanLy"
     android:padding="20dp">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
         <ImageView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/admin_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:text="Đơn Hàng"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:background="@drawable/dia_bg"
+                android:id="@+id/btn_quanly_DonHang"
+                android:textSize="30dp"
+                android:drawableTop="@drawable/donhang_icon"/>
+            <Button
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:text="Menu"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:id="@+id/btn_quanly_Menu"
+                android:background="@drawable/dia_bg"
+                android:textSize="30dp"
+                android:drawableTop="@drawable/don_hang_quan_ly"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:text="Xác nhận"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:background="@drawable/dia_bg"
+                android:id="@+id/btn_quanly_daxacnhan"
+                android:textSize="30dp"
+                android:drawableTop="@drawable/xacnhan_icon"/>
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="200dp"
+                android:text="Doanh thu"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:id="@+id/btn_quanly_doanhthu"
+                android:background="@drawable/dia_bg"
+                android:textSize="30dp"
+                android:drawableTop="@drawable/doanhthu_icon"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:text="Quảng cáo"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:background="@drawable/dia_bg"
+                android:id="@+id/btn_quanly_quangcao"
+                android:textSize="30dp"
+                android:drawableTop="@drawable/xacnhan_icon"/>
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+            <!--        <Button-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_marginLeft="10dp"-->
+            <!--            android:layout_height="200dp"-->
+            <!--            android:text="Doanh thu"-->
+            <!--            android:textColor="#ffffff"-->
+            <!--            android:textAllCaps="false"-->
+            <!--            android:id="@+id/btn_quanly_doanhthu"-->
+            <!--            android:background="@drawable/dia_bg"-->
+            <!--            android:textSize="30dp"-->
+            <!--            android:drawableTop="@drawable/doanhthu_icon"/>-->
+
+        </LinearLayout>
+
         <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:text="Đơn Hàng"
-            android:textColor="#ffffff"
-            android:textAllCaps="false"
-            android:background="@drawable/dia_bg"
-            android:id="@+id/btn_quanly_DonHang"
-            android:textSize="30dp"
-            android:drawableTop="@drawable/donhang_icon"/>
+            android:id="@+id/btn_quanly_doimk"
+            android:textColor="#524E4E"
+            android:padding="10dp"
+            android:background="@drawable/custom_button_ad"
+            style="@style/Theme.Design.Light"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đổi mật khẩu">
+
+        </Button>
         <Button
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:text="Menu"
-            android:textColor="#ffffff"
-            android:textAllCaps="false"
-            android:id="@+id/btn_quanly_Menu"
-            android:background="@drawable/dia_bg"
-            android:textSize="30dp"
-            android:drawableTop="@drawable/don_hang_quan_ly"/>
+            android:id="@+id/btn_quanly_dangxuat"
+            android:textColor="#524E4E"
+            android:padding="10dp"
+            android:background="@drawable/custom_button_ad"
+            style="@style/Theme.Design.Light"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng xuất">
+
+        </Button>
     </LinearLayout>
-
-    <LinearLayout
-        android:paddingTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:text="Xác nhận"
-            android:textColor="#ffffff"
-            android:textAllCaps="false"
-            android:background="@drawable/dia_bg"
-            android:id="@+id/btn_quanly_daxacnhan"
-            android:textSize="30dp"
-            android:drawableTop="@drawable/xacnhan_icon"/>
-        <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_height="200dp"
-            android:text="Doanh thu"
-            android:textColor="#ffffff"
-            android:textAllCaps="false"
-            android:id="@+id/btn_quanly_doanhthu"
-            android:background="@drawable/dia_bg"
-            android:textSize="30dp"
-            android:drawableTop="@drawable/doanhthu_icon"/>
-
-    </LinearLayout>
-    <Button
-        android:id="@+id/btn_quanly_doimk"
-        android:textColor="#524E4E"
-        android:padding="10dp"
-        android:background="@drawable/custom_button_ad"
-        style="@style/Theme.Design.Light"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đổi mật khẩu">
-
-    </Button>
-    <Button
-        android:id="@+id/btn_quanly_dangxuat"
-        android:textColor="#524E4E"
-        android:padding="10dp"
-        android:background="@drawable/custom_button_ad"
-        style="@style/Theme.Design.Light"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đăng xuất">
-
-    </Button>
-
-</LinearLayout>
+</ScrollView>

@@ -34,17 +34,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<UserInfor> userInforArrayList = new ArrayList<>();
 
-    public static  ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
+    public static ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
 
     public static ArrayList<RequestXacnhan> requestXacnhanArrayList = new ArrayList<>();
+
+    public static ArrayList<Slideshow> slideshowArrayList = new ArrayList<>();
+
+    public static ArrayList<String> keySlideshow = new ArrayList<>();
 
     public static ArrayList<String> keyRequest = new ArrayList<>();
 
     public static ArrayList<String> keygiohang = new ArrayList<>();
 
-    public static int index=-1;
+    public static int index = -1;
 
-    public static DatabaseReference mData =FirebaseDatabase.getInstance().getReference();
+    public static DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
     public static FirebaseStorage storage = FirebaseStorage.getInstance();
 
     public static StorageReference storageRef = storage.getReferenceFromUrl("gs://database-projectandroid.appspot.com");
@@ -55,10 +59,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     Button btnmain;
     Fragment select = null;
-    public static NavigationView navigationView ;
+    public static NavigationView navigationView;
     Intent intent;
     public static Menu menu1;
-
 
 
     @Override
@@ -91,11 +94,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
 
-        navigationView=findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        menu1=navigationView.getMenu();
-        if(index!=-1) {
+        menu1 = navigationView.getMenu();
+        if (index != -1) {
             menu1.findItem(R.id.itemName).setTitle(userInforArrayList.get(index).getName());
             menu1.findItem(R.id.itemSdt).setTitle(userInforArrayList.get(index).getPhone());
             menu1.findItem(R.id.itemEmail).setTitle(userInforArrayList.get(index).getEmail());
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         Fragment fragmentfirst = new HomeFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragmentfirst).show(fragmentfirst).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentfirst).show(fragmentfirst).commit();
 
     }
 
@@ -113,8 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                    switch (menuItem.getItemId())
-                    {
+                    switch (menuItem.getItemId()) {
                         case R.id.itemHomeMain:
                             select = new HomeFragment();
                             break;
@@ -142,26 +144,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.itemInfor:
 
-                Intent intent=new Intent(this, Detail_Info.class);
+                Intent intent = new Intent(this, Detail_Info.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.itemHelp:
-                Intent intent1=new Intent(this, HelpActivity.class);
+                Intent intent1 = new Intent(this, HelpActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.itemLogout:
-                index=-1;
-                Intent intent2=new Intent(this,LoginActivity.class);
+                index = -1;
+                Intent intent2 = new Intent(this, LoginActivity.class);
                 startActivity(intent2);
                 finish();
                 break;
             case R.id.itemHistory:
-               Intent intent3 = new Intent(this, HistoryActivity.class);
-               startActivity(intent3);
+                Intent intent3 = new Intent(this, HistoryActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.itemChangepass:
                 startActivity(new Intent(this, ChangePassword.class));
@@ -172,15 +174,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public static void DataBase(){
+    public static void DataBase() {
 //        for(int i = 0;i<userInforArrayList.size();i++){
 //            mData.child("UserInfor").push().setValue(userInforArrayList.get(i));
 //        }
         userInforArrayList.clear();
         monNuocArrayList.clear();
         requestXacnhanArrayList.clear();
+        slideshowArrayList.clear();
         keyRequest.clear();
         keyUser.clear();
+        keySlideshow.clear();
 
         mData.child("UserInfor").addChildEventListener(new ChildEventListener() {
             @Override
@@ -270,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    public static void LoadKeyGioHang(){
+    public static void LoadKeyGioHang() {
         keygiohang.clear();
         mData.child("DonHang").addChildEventListener(new ChildEventListener() {
             @Override
@@ -299,7 +303,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+
+        mData.child("QuangCao").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                slideshowArrayList.add(dataSnapshot.getValue(Slideshow.class));
+                keySlideshow.add(dataSnapshot.getKey());
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
+
 
     public void LoadDataNuoc(){
 

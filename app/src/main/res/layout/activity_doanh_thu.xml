@@ -39,5 +39,5 @@
         android:textSize="24sp"
         android:layout_height="0dp"
         android:textAllCaps="false"
-        android:text="Reset"/>
+        android:text="Làm mới"/>
 </LinearLayout>

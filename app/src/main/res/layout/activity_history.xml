@@ -12,7 +12,7 @@
         android:background="#5C7AB8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="History"
+        android:text="Lịch sử"
         android:layout_marginTop="10dp"
         android:textColor="#fff"
         android:gravity="center"/>
@@ -30,5 +30,5 @@
         android:layout_weight="1"
         android:textAllCaps="false"
         android:id="@+id/btn_history_reset"
-        android:text="Reset history"/>
+        android:text="Làm mới lịch sử"/>
 </LinearLayout>
