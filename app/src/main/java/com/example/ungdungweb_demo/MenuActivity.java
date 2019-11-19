@@ -45,6 +45,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, AddMonActivity.class));
+                finish();
             }
         });
 
@@ -52,6 +53,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, DeleteMonActivity.class));
+                finish();
             }
         });
 
@@ -94,6 +96,11 @@ public class MenuActivity extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(MenuActivity.this, QuanLy.class));
+        finish();
+    }
 
 }

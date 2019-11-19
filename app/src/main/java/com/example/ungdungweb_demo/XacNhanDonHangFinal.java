@@ -23,13 +23,12 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
         setContentView(R.layout.activity_xac_nhan_don_hang_final);
         listMon = findViewById(R.id.listview_xacnhan_final);
         btnXacNhan = findViewById(R.id.btn_xacnhan);
-        btnTuChoi = findViewById(R.id.btn_tuchoi);
+        btnTuChoi = findViewById(R.id.btn_xacnhan_tuchoi);
         btnTien = findViewById(R.id.btn_xacnhan_tongtien);
         btnCoupon = findViewById(R.id.btn_xacnhan_giamgia);
         tvTien = findViewById(R.id.tv_xacnhan_tongtien);
 
 
-        Log.d("MANMEO",Dem()+"-"+QuanLy.index);
 //        xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,QuanLy.donHangArrayList.get(QuanLy.index).getDonhang());
         xacNhanAdapter = new XacNhanAdapter(this,R.layout.dia_quanly_don_hang,XacNhanDonHang.hangArrayList.get(QuanLy.index).getDonhang());
         listMon.setAdapter(xacNhanAdapter);
@@ -40,7 +39,6 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RequestXacnhan requestXacnhan = MainActivity.requestXacnhanArrayList.get(Dem());
-                Log.d("INDEX",QuanLy.index+"");
                 if(QuanLy.xacdinhmandatarequest == 1){
                     requestXacnhan.request = "xác nhận";
                     MainActivity.requestXacnhanArrayList.get(Dem()).request="xác nhận";
@@ -52,7 +50,24 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
 
                 }
                 QuanLy.mData.child("RequestDonHang").child(MainActivity.keyRequest.get(Dem())).setValue(requestXacnhan);
-                Log.d("INDEX",Dem()+"");
+                Toast.makeText(XacNhanDonHangFinal.this, "xác nhận thành công", Toast.LENGTH_SHORT).show();
+                MainActivity.LoadKeyGioHang();
+                finish();
+            }
+        });
+
+        btnTuChoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RequestXacnhan requestXacnhan = MainActivity.requestXacnhanArrayList.get(Dem());
+                if(QuanLy.xacdinhmandatarequest == 1){
+                    requestXacnhan.request = "từ chối";
+                    MainActivity.requestXacnhanArrayList.get(Dem()).request="từ chối";
+                }else if(QuanLy.xacdinhmandatarequest == 2){
+                   finish();
+
+                }
+                QuanLy.mData.child("RequestDonHang").child(MainActivity.keyRequest.get(Dem())).setValue(requestXacnhan);
                 Toast.makeText(XacNhanDonHangFinal.this, "xác nhận thành công", Toast.LENGTH_SHORT).show();
                 MainActivity.LoadKeyGioHang();
                 finish();

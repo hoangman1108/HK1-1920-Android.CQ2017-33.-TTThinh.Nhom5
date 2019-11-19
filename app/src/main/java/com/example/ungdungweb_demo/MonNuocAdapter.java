@@ -104,10 +104,12 @@ public class MonNuocAdapter extends BaseAdapter{
                 final Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
                 final Button btnMua = dialog.findViewById(R.id.dialog_btn_Mua);
                 final TextView tvSoluong = dialog.findViewById(R.id.dia_soluong);
+                ImageView imageView = dialog.findViewById(R.id.dialog_imgviewCoffee);
 
                 final TextView tvGia = dialog.findViewById(R.id.dialog_tvGia);
                 final TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
 
+                Picasso.get().load(monNuoc.getHinh1()).into(imageView);
                 tvTen.setText(viewHolder.tvTenMon1.getText());
                 tvGia.setText(viewHolder.btnGia1.getText());
                 btnMua.setText(viewHolder.btnGia1.getText());
@@ -203,10 +205,12 @@ public class MonNuocAdapter extends BaseAdapter{
                     final Button btnadd=dialog.findViewById(R.id.dia_btn_mua_add);
                     final Button btnMua = dialog.findViewById(R.id.dialog_btn_Mua);
                     final TextView tvSoluong = dialog.findViewById(R.id.dia_soluong);
+                    ImageView imageView = dialog.findViewById(R.id.dialog_imgviewCoffee);
+
 
                     final TextView tvGia = dialog.findViewById(R.id.dialog_tvGia);
                     final TextView tvTen = dialog.findViewById(R.id.dialog_tvTenmon);
-
+                    Picasso.get().load(monNuoc.getHinh1()).into(imageView);
                     tvTen.setText(viewHolder.tvTenMon2.getText());
                     tvGia.setText(viewHolder.btnGia2.getText());
                     btnMua.setText(viewHolder.btnGia2.getText());

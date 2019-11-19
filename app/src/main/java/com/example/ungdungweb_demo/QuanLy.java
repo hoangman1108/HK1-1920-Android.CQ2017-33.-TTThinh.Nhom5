@@ -76,6 +76,7 @@ public class QuanLy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(QuanLy.this, MenuActivity.class));
+                finish();
             }
         });
 

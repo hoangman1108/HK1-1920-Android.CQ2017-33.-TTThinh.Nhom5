@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="#fff4e6">
     <TextView
+        android:background="#5C7AB8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Doanh Thu"
@@ -11,7 +12,7 @@
         android:textSize="30dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textColor="#f000"/>
+        android:textColor="#fff"/>
 
     <ListView
         android:id="@+id/list_doanhthu"
@@ -20,16 +21,18 @@
         android:layout_weight="10" />
 
     <Button
-        android:background="@drawable/bg_round_corner2"
+        android:textColor="#fff"
+        android:background="#425B8F"
         android:textAllCaps="false"
         android:layout_weight="1"
         android:id="@+id/btn_tong_doanh_thu"
         android:layout_width="match_parent"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:layout_height="0dp"
         android:text="Tổng thu nhập: 0.000 đ"/>
     <Button
-        android:background="@drawable/shadow_btn"
+        android:background="#D6D6D6"
+        android:textColor="#505050"
         android:layout_weight="1"
         android:id="@+id/btn_resetDoanhThu"
         android:layout_width="match_parent"

@@ -112,7 +112,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.navigationView.setCheckedItem(R.id.itemMap);
-                Fragment fragment = new MapsFragment();
+                Fragment fragment = new BlankFragment();
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).show(fragment).commit();
             }
         });

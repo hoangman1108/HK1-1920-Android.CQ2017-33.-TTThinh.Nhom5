@@ -5,29 +5,33 @@
     android:background="@drawable/bg_round_corner">
 
     <TextView
+        android:paddingHorizontal="15dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Bạn Muốn xóa sản phẩm này"/>
+        android:text="Bạn muốn xóa sản phẩm này?"/>
 
     <LinearLayout
+        android:paddingBottom="15dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:textColor="#fff"
             android:id="@+id/dialog_xoa_mon_delete"
-            android:background="@drawable/radius"
+            android:background="@drawable/custom_button"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete"/>
         <Button
+            android:textColor="#464646"
             android:id="@+id/dialog_xoa_mon_cancel"
-            android:background="@drawable/cancel"
+            android:background="@drawable/custom_button_1"
             android:layout_marginLeft="30dp"
             android:textAllCaps="false"
             android:layout_width="wrap_content"

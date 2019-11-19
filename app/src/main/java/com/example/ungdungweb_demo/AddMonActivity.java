@@ -126,6 +126,8 @@ public class AddMonActivity extends AppCompatActivity {
                             QuanLy.mData.child("MonNuoc").push().setValue(monNuoc);
                             index =1;
 //                            QuanLy.monNuocArrayList.add(monNuoc);
+                            startActivity(new Intent(AddMonActivity.this, MenuActivity.class));
+
                             finish();
                         }
                     });
@@ -153,6 +155,10 @@ public class AddMonActivity extends AppCompatActivity {
                             QuanLy.monNuocArrayList.remove(QuanLy.monNuocArrayList.size()-1);
 //                            QuanLy.monNuocArrayList.add(monNuoc);
 //                            MenuActivity.adapter.notifyDataSetChanged();
+
+
+                            startActivity(new Intent(AddMonActivity.this, MenuActivity.class));
+
                             finish();
                         }
                     });
@@ -162,9 +168,15 @@ public class AddMonActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
-
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        startActivity(new Intent(AddMonActivity.this, MenuActivity.class));
+//        finish();
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

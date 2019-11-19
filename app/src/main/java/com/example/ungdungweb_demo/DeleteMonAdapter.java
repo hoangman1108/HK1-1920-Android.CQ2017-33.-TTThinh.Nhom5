@@ -62,48 +62,70 @@ public class DeleteMonAdapter extends BaseAdapter {
         viewHolder.tenmon1.setText(monNuoc.tenmon1);
         viewHolder.tenmon2.setText(monNuoc.tenmon2);
 
+//        if(viewHolder.tenmon2.getText().toString().equals("")){
+//            viewHolder.xoa2.setVisibility(convertView.VISIBLE);
+//        }
+
+//        if(!monNuoc.getTenMon2().equals(null))
+//        {
+//            viewHolder.tenmon2.setText(monNuoc.tenmon2);
+//        }
+
         viewHolder.xoa1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              if(monNuoc.getTenMon2().equals("") || monNuoc.getTenMon2() == null){
+//              if(monNuoc.getTenMon2().equals("")){
+//
+//
+//                 MenuActivity.arrIdMon.remove(position);
+//                  viewHolder.xoa2.setVisibility(v.VISIBLE);
+//                  notifyDataSetChanged();
+//                  list.remove(position);
+//                  QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).removeValue();
+//              }
+//              else{
+//                  list.get(position).setHinh1(monNuoc.getHinh2());
+//                  list.get(position).setGia1(monNuoc.getGia2());
+//                  list.get(position).setTenMon1(monNuoc.tenmon2);
+//                  list.get(position).setHinh2(null);
+//                  list.get(position).setGia2(null);
+//                  list.get(position).setTenMon2(null);
+                MonNuoc monNuoc1 = new MonNuoc(list.get(position).gia2,list.get(position).tenmon2,list.get(position).hinh2);
+                list.add(position+1,monNuoc1);
+                list.remove(position);
+//                  list.add(monNuoc1);
+                viewHolder.xoa2.setVisibility(v.GONE);
+                notifyDataSetChanged();
 
-
-                 MenuActivity.arrIdMon.remove(position);
-                  viewHolder.xoa2.setVisibility(v.VISIBLE);
-                  notifyDataSetChanged();
-
-                  list.remove(position);
-                  QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).removeValue();
-              }
-              else{
-                  list.get(position).setHinh1(monNuoc.getHinh2());
-                  list.get(position).setGia1(monNuoc.getGia2());
-                  list.get(position).setTenMon1(monNuoc.tenmon2);
-                  list.get(position).setHinh2("");
-                  list.get(position).setGia2("");
-                  list.get(position).setTenMon2("");
-                  viewHolder.xoa2.setVisibility(v.GONE);
-                  notifyDataSetChanged();
-
-                  QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).setValue(list.get(position));
-              }
-
-
+                QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).setValue(list.get(position));
             }
+
+
+//            }
         });
 
         viewHolder.xoa2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MonNuoc monNuoc1 = new MonNuoc(list.get(position).gia2,list.get(position).tenmon2,list.get(position).hinh2);
 
-                list.get(position).setHinh2("");
-                list.get(position).setGia2("");
-                list.get(position).setTenMon2("");
+                list.get(position).setHinh2(null);
+                list.get(position).setGia2(null);
+                list.get(position).setTenMon2(null);
+
+                MonNuoc monNuoc2 = new MonNuoc(list.get(position).gia1,list.get(position).tenmon1,list.get(position).hinh1);
+                list.add(position+1,monNuoc2);
+                list.remove(position);
                 notifyDataSetChanged();
+                viewHolder.xoa2.setVisibility(v.GONE);
 
-                QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).setValue(list.get(position));
+                QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).removeValue();
+                QuanLy.mData.child("MonNuoc").push().setValue(list.get(position));
+//                QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(position)).setValue(list.get(position));
             }
         });
+
         return convertView;
     }
+
 }

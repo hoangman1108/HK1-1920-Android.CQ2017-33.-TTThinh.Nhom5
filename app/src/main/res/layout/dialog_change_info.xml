@@ -15,18 +15,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textStyle="bold"
             android:text="Name"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:textStyle="bold"
             android:textColor="#70130C"
             android:id="@+id/dialog_detail_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Đoàn Thị Cẩm Nhung"
-            android:textSize="24sp"/>
+            android:textSize="22sp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -35,18 +35,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textStyle="bold"
             android:text="Day of birth"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:textStyle="bold"
             android:textColor="#70130C"
             android:id="@+id/dialog_detail_birthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="14/01/1999"
-            android:textSize="24sp"/>
+            android:textSize="22sp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -55,18 +55,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textStyle="bold"
             android:text="Phone"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:textStyle="bold"
             android:textColor="#70130C"
             android:id="@+id/dialog_detail_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0334558099"
-            android:textSize="24sp"/>
+            android:textSize="22sp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -75,8 +75,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textStyle="bold"
             android:text="Gender: "
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <RadioGroup
@@ -86,20 +87,18 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:textStyle="bold"
                 android:textColor="#70130C"
                 android:id="@+id/dialog_rabtn_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
-                android:textSize="24sp"/>
+                android:textSize="22sp"/>
             <RadioButton
-                android:textStyle="bold"
                 android:textColor="#70130C"
                 android:id="@+id/dialog_rabtn_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_marginLeft="50dp"
                 android:text="Female"/>
 
@@ -112,18 +111,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textStyle="bold"
             android:text="Email"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:textStyle="bold"
             android:textColor="#70130C"
             android:id="@+id/dialog_detail_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="quynhlam1411999@gmail.com"
-            android:textSize="24sp"/>
+            android:textSize="22sp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -134,18 +133,16 @@
         >
         <Button
             android:layout_marginRight="30dp"
-            android:textStyle="bold"
             android:textColor="#FFFBFB"
-            android:background="@drawable/dia_bg"
+            android:background="@drawable/custom_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dialog_btn_change"
             android:text="Change"
             />
         <Button
-            android:textStyle="bold"
-            android:textColor="#FFFBFB"
-            android:background="@drawable/dia_bg"
+            android:textColor="#494949"
+            android:background="@drawable/custom_button_1"
             android:id="@+id/dialog_btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

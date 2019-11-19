@@ -9,6 +9,17 @@
     android:padding="20dp">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/admin_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,12 +79,25 @@
 
     </LinearLayout>
     <Button
-        android:id="@+id/btn_quanly_dangxuat"
-        android:textColor="#FFFEFE"
+        android:id="@+id/btn_quanly_doimk"
+        android:textColor="#524E4E"
         android:padding="10dp"
-        android:background="#F7324D"
+        android:background="@drawable/custom_button_ad"
         style="@style/Theme.Design.Light"
         android:layout_marginTop="30dp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đổi mật khẩu">
+
+    </Button>
+    <Button
+        android:id="@+id/btn_quanly_dangxuat"
+        android:textColor="#524E4E"
+        android:padding="10dp"
+        android:background="@drawable/custom_button_ad"
+        style="@style/Theme.Design.Light"
+        android:layout_marginTop="5dp"
         android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
