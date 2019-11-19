@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class RequestActivity extends AppCompatActivity {
 
     int a = 0;
-    TextView tvName;
+    TextView tvName,tenRequest;
     ListView list;
     Button btnReset;
     RequestAdapter requestAdapter;
@@ -94,7 +94,8 @@ public class RequestActivity extends AppCompatActivity {
 
 //        if(a !=1)
 //        {
-        for (int i = 0; i < key.size(); i++) {
+        int  k = key.size();
+        for (int i = 0; i <k; i++) {
             final int finalI = i;
 //            arrayList.clear();
             QuanLy.mData.child("RequestDonHang").child(key.get(i)).child("request").addValueEventListener(new ValueEventListener() {

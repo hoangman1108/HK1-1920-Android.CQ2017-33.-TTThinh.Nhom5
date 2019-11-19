@@ -49,6 +49,7 @@
             android:text="0.000 đ"
             android:textSize="28sp"
             android:drawableTop="@drawable/tien"
+            android:drawableTint="#2ABB30"
             android:paddingTop="5dp"/>
         <Button
             android:id="@+id/btn_xacnhan_giamgia"
@@ -61,6 +62,7 @@
             android:text="Mã giảm giá"
             android:textSize="20sp"
             android:drawableTop="@drawable/coupon"
+            android:drawableTint="#1B78AF"
             android:paddingTop="5dp"/>
     </LinearLayout>
     <LinearLayout
@@ -68,6 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:textColor="#fff"
+            android:background="@drawable/custom_button_ad1"
             android:layout_margin="5dp"
             android:padding="5dp"
             android:id="@+id/btn_xacnhan"
@@ -77,6 +81,8 @@
             android:textSize="24dp"
             android:text="Xác nhận"/>
         <Button
+            android:textColor="#474747"
+            android:background="@drawable/custom_button_ad"
             android:layout_margin="5dp"
             android:padding="5dp"
             android:id="@+id/btn_xacnhan_tuchoi"

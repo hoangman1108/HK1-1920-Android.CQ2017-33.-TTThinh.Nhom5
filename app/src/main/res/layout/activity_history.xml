@@ -7,13 +7,14 @@
     android:orientation="vertical"
     tools:context=".HistoryActivity">
     <TextView
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:background="#5C7AB8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="History"
         android:layout_marginTop="10dp"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:textColor="#f000"
+        android:textColor="#fff"
         android:gravity="center"/>
     <ListView
         android:layout_width="match_parent"
@@ -21,6 +22,9 @@
         android:layout_weight="9"
         android:id="@+id/listhistory"/>
     <Button
+        android:textColor="#fff"
+        android:background="#425B8F"
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

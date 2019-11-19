@@ -51,7 +51,7 @@
         <Button
             android:id="@+id/btn_add_mon_them"
             android:textColor="#fff"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/custom_button_ad1"
             android:padding="10dp"
             style="@style/Theme.Design.Light"
             android:layout_marginTop="30dp"

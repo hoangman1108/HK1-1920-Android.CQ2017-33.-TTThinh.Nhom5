@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +25,7 @@ public class QuanLy extends AppCompatActivity {
     public static DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
     public static ArrayList<String> arraykey = new ArrayList<>();
     public static ArrayList<MonNuoc> monNuocArrayList = new ArrayList<>();
-    Button btnDonHang, btnMenu, btnXacnhan, btnDoanhthu,btnDangxuat, btnDoimk;
+    Button btnDonHang, btnMenu, btnXacnhan, btnDoanhthu,btnDangxuat, btnDoiMK;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,18 +35,11 @@ public class QuanLy extends AppCompatActivity {
         btnXacnhan = findViewById(R.id.btn_quanly_daxacnhan);
         btnDoanhthu = findViewById(R.id.btn_quanly_doanhthu);
         btnDangxuat = findViewById(R.id.btn_quanly_dangxuat);
-        btnDoimk = findViewById(R.id.btn_quanly_doimk);
+        btnDoiMK = findViewById(R.id.btn_quanly_doimk);
 
 
         DataBase();
 //        Value value = new Value(0,"");
-        btnDoimk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(QuanLy.this, ChangePassword.class));
-            }
-        });
-
         btnDoanhthu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +60,7 @@ public class QuanLy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 QuanLy.xacdinhmandatarequest = 2;
+
                 Intent intent = new Intent(QuanLy.this, XacNhanDonHang.class);
                 startActivity(intent);
             }
@@ -75,6 +70,7 @@ public class QuanLy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 QuanLy.xacdinhmandatarequest = 1;
+
                 Intent intent = new Intent(QuanLy.this, XacNhanDonHang.class);
                 startActivity(intent);
             }
@@ -85,6 +81,13 @@ public class QuanLy extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(QuanLy.this, MenuActivity.class));
                 finish();
+            }
+        });
+
+        btnDoiMK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(QuanLy.this,ChangePassword.class));
             }
         });
 

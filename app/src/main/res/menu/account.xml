@@ -16,6 +16,8 @@
     </item>
     <item android:icon="@drawable/help" android:title="Help" android:id="@+id/itemHelp">
     </item>
+    <item android:icon="@drawable/key" android:title="Change password" android:id="@+id/itemChangepass">
+    </item>
     <item android:icon="@drawable/logout" android:title="Log out" android:id="@+id/itemLogout">
     </item>
 

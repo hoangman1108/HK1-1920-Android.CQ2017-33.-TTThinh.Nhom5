@@ -42,14 +42,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<String> keygiohang = new ArrayList<>();
 
-    public static ArrayList<String> keyUser = new ArrayList<>();
-
     public static int index=-1;
 
     public static DatabaseReference mData =FirebaseDatabase.getInstance().getReference();
     public static FirebaseStorage storage = FirebaseStorage.getInstance();
 
     public static StorageReference storageRef = storage.getReferenceFromUrl("gs://database-projectandroid.appspot.com");
+
+    public static ArrayList<String> keyUser = new ArrayList<>();
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
@@ -162,6 +162,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.itemHistory:
                Intent intent3 = new Intent(this, HistoryActivity.class);
                startActivity(intent3);
+                break;
+            case R.id.itemChangepass:
+                startActivity(new Intent(this, ChangePassword.class));
                 break;
 
         }

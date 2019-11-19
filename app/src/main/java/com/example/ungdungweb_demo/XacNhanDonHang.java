@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,6 +20,7 @@ public class XacNhanDonHang extends AppCompatActivity {
 
     public static ArrayList<Integer> arraykeyXacnhan = new ArrayList<>();
     ListView lvdonhang;
+    TextView textView;
     ArrayList<String> arr;
     ThongTinDonAdapter thongTinDonAdapter;
     public static ArrayList<DonHang> hangArrayList = new ArrayList<>();
@@ -29,6 +31,12 @@ public class XacNhanDonHang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xac_nhan_don_hang);
         lvdonhang = findViewById(R.id.lv_quanly_donhang);
+        textView = findViewById(R.id.tv_quanly_request);
+
+        if(QuanLy.xacdinhmandatarequest == 1)
+            textView.setText("Đơn hàng");
+        else
+            textView.setText("Thanh toán");
 
         arr = new ArrayList<>();
 

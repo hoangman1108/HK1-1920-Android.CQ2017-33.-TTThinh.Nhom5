@@ -16,6 +16,9 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
            <Button
+               android:layout_marginEnd="10dp"
+               android:textColor="#fff"
+               android:background="@drawable/custom_button_ad1"
                android:layout_weight="1"
                android:layout_width="0dp"
                android:textAllCaps="false"
@@ -24,6 +27,8 @@
                android:id="@+id/btn_menu_them"
                android:textSize="24sp"/>
            <Button
+               android:textColor="#494949"
+               android:background="@drawable/custom_button_ad"
                android:layout_weight="1"
                android:layout_width="0dp"
                android:textAllCaps="false"

@@ -4,14 +4,14 @@
     android:layout_height="match_parent"
     android:background="#fff4e6">
     <TextView
+        android:textStyle="bold"
+        android:textSize="30dp"
         android:background="#5C7AB8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Doanh Thu"
         android:gravity="center"
-        android:textSize="30dp"
         android:layout_marginTop="10dp"
-        android:textStyle="bold"
         android:textColor="#fff"/>
 
     <ListView
