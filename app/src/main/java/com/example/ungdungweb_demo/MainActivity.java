@@ -8,12 +8,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -22,6 +22,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static ArrayList<String> keyRequest = new ArrayList<>();
 
+    public static ArrayList<String> keygiohang = new ArrayList<>();
 
     public static int index=-1;
 
@@ -69,11 +71,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (index == -1) {
             DataBase();
             LoadDataNuoc();
+            LoadKeyGioHang();
 
             Intent intentA = new Intent(this, LoginActivity.class);
             startActivity(intentA);
             finish();
         }
+
+//
 
 //        Intent intentacept = getIntent();
 //        index = intent.getIntExtra("key",0);
@@ -152,18 +157,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent2);
                 finish();
                 break;
+            case R.id.itemHistory:
+               Intent intent3 = new Intent(this, HistoryActivity.class);
+               startActivity(intent3);
+                break;
 
         }
 
         return true;
     }
 
-    public void DataBase(){
+    public static void DataBase(){
 //        for(int i = 0;i<userInforArrayList.size();i++){
 //            mData.child("UserInfor").push().setValue(userInforArrayList.get(i));
 //        }
         userInforArrayList.clear();
         monNuocArrayList.clear();
+        requestXacnhanArrayList.clear();
+        keyRequest.clear();
 
         mData.child("UserInfor").addChildEventListener(new ChildEventListener() {
             @Override
@@ -220,14 +231,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-        requestXacnhanArrayList.clear();
         mData.child("RequestDonHang").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 RequestXacnhan requestXacnhan = dataSnapshot.getValue(RequestXacnhan.class);
                 requestXacnhanArrayList.add(requestXacnhan);
                 keyRequest.add(dataSnapshot.getKey());
-                Log.d("SDT",requestXacnhan.sdt);
+//                Log.d("SDT",requestXacnhan.sdt);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
+    public static void LoadKeyGioHang(){
+        keygiohang.clear();
+        mData.child("DonHang").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                keygiohang.add(dataSnapshot.getKey());
+//                Log.d("Keyabc",keygiohang.get(keygiohang.size()-1));
             }
 
             @Override
@@ -269,29 +311,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/4.jpg?alt=media&token=cb35ff7f-6c78-4ba0-897c-939e8de8a12d");
 //        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/5.jpg?alt=media&token=f482f667-1641-47c7-a9c2-ac2e42b6c38f");
 //        urlImageNuoc.add("https://firebasestorage.googleapis.com/v0/b/database-projectandroid.appspot.com/o/6.jpg?alt=media&token=91bd6c15-371f-4803-a4aa-9752c6bce2ee");
-////        MonNuoc monNuoc = new MonNuoc("38.000","37.000","Machiato Mango","Machiato co...",urlImageNuoc.get(0), urlImageNuoc.get(1));
+//        MonNuoc monNuoc = new MonNuoc("38.000","37.000","Machiato Mango","Machiato co...",urlImageNuoc.get(0), urlImageNuoc.get(1));
 //        MonNuoc monNuoc = new MonNuoc("41.000","35.000","Black coffee","Milk coffee",urlImageNuoc.get(2), urlImageNuoc.get(3));
 //        MonNuoc monNuoc1 = new MonNuoc("40.000","36.000","Blue sky","Tropical stom",urlImageNuoc.get(4), urlImageNuoc.get(5));
 //        MonNuoc monNuoc2 = new MonNuoc("55.000","39.000","Hột é","Nước mía",urlImageNuoc.get(0), urlImageNuoc.get(1));
-//        MonNuoc monNuoc3 = new MonNuoc("37.000","44.000","cocain","red malboro",urlImageNuoc.get(3), urlImageNuoc.get(4));
+//        MonNuoc monNuoc3 = new MonNuoc("37.000","44.000","cocain","red malboro",urlImageNuoc.get(3), urlImageNuoc.get(0));
 //
 //        mData.child("MonNuoc").push().setValue(monNuoc);
 //        mData.child("MonNuoc").push().setValue(monNuoc1);
 //        mData.child("MonNuoc").push().setValue(monNuoc2);
 //        mData.child("MonNuoc").push().setValue(monNuoc3);
 
-
-//        mData.child("MonNuoc").push().setValue(monNuoc, new DatabaseReference.CompletionListener() {
-//            @Override
-//            public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
-//                if(databaseError== null){
-//                    Toast.makeText(MainActivity.this, "Lưu dữ liệu thành công", Toast.LENGTH_SHORT).show();
+//        MainActivity.userInforArrayList.add(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123","Nguyễn Hoàng Mẫn","11/08/1980","Female"));
+//        MainActivity.userInforArrayList.add(new UserInfor("hello@gmail.com","0356981653","tototo123","Nguyễn Văn văn","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("alen@gmail.com","03569345653","tototo123","Cao Văn Lầu","11/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("pro@gmail.com","0356933553","tototo123","Nguyễn Văn B","12/1/1999","Female"));
+//        MainActivity.userInforArrayList.add(new UserInfor("vip@gmail.com","0356553653","tototo123","Nguyễn Văn C","15/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("vippro123@gmail.com","0356981653","tototo123","Nguyễn Thị D","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("baophatnguyen99@gmail.com","0355555553","tototo123","Nguyễn Hữu Cảnh","1/1/1999","Male"));
+//        MainActivity.userInforArrayList.add(new UserInfor("a","0355555553","b","Nguyễn Hữu Cảnh","1/1/1999","Male"));
 //
-//                }else {
-//                    Toast.makeText(MainActivity.this, "lỗi lưu dữ liệu", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
+//        for(int i = 0;i<1;i++){
+//            mData.child("UserInfor").push().setValue(new UserInfor("nguoikhung@gmail.com","0356341653","tototo123","Nguyễn Hoàng Mẫn","11/08/1980","Female"));
+//            mData.child("UserInfor").push().setValue(new UserInfor("a","0355555553","b","Nguyễn Hữu Cảnh","1/1/1999","Male"));
+//            mData.child("UserInfor").push().setValue(new UserInfor("vip@gmail.com","0356553653","123","Nguyễn Văn C","15/1/1999","Male"));
+//        }
+
     }
 }
 

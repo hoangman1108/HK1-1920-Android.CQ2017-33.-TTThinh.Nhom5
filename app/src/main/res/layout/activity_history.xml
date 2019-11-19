@@ -4,23 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff4e6"
     android:orientation="vertical"
-    tools:context=".RequestActivity">
+    tools:context=".HistoryActivity">
     <TextView
-        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Request"
-        android:gravity="center"
+        android:text="History"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:textColor="#f000"
-        android:textSize="24sp"
-        android:id="@+id/tv_changenamerequest"/>
+        android:gravity="center"/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
-        android:id="@+id/list_request"/>
-
+        android:id="@+id/listhistory"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textAllCaps="false"
+        android:id="@+id/btn_history_reset"
+        android:text="Reset history"/>
 </LinearLayout>

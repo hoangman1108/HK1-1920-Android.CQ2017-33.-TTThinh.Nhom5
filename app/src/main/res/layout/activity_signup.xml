@@ -7,7 +7,7 @@
     android:id="@+id/drawerlayout"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -33,144 +33,145 @@
             android:layout_weight="5"
             android:layout_width="match_parent"
             android:layout_height="0dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#fff4e6"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginBottom="40dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#fff4e6"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginBottom="40dp">
 
-            <TextView
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:text="Đăng ký"
-                android:textColor="#3c2f2f"
-                android:textSize="28sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Họ và tên:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp" />
-
-            <EditText
-                android:layout_marginHorizontal="30dp"
-                android:id="@+id/edt_signup_ten"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="VD: Nguyễn Bảo Phát"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp" />
-
-            <EditText
-                android:layout_marginHorizontal="30dp"
-                android:id="@+id/edt_signup_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="VD: phat_food@gmail.com"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Số điện thoại:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp" />
-            <EditText
-                android:layout_marginHorizontal="30dp"
-                android:id="@+id/edt_signup_sdt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="VD: 0351298321"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ngày sinh:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp" />
-            <EditText
-                android:layout_marginHorizontal="30dp"
-                android:focusable="false"
-                android:clickable="true"
-                android:editable="false"
-                android:id="@+id/edt_signup_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="11/08/1998"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <RadioGroup
-                android:id="@+id/dialog_detail_gender"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:textColor="#000000"
-                    android:id="@+id/radio_signup_male"
+                <TextView
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male"
-                    android:textSize="24sp"/>
-                <RadioButton
-                    android:textColor="#000000"
-                    android:id="@+id/radio_signup_female"
+                    android:layout_marginBottom="25dp"
+                    android:text="Đăng ký"
+                    android:textColor="#3c2f2f"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Họ và tên:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:layout_marginHorizontal="30dp"
+                    android:id="@+id/edt_signup_ten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="VD: Nguyễn Bảo Phát"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:layout_marginHorizontal="30dp"
+                    android:id="@+id/edt_signup_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="VD: phat_food@gmail.com"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Số điện thoại:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="22sp" />
+
+                <EditText
+                    android:layout_marginHorizontal="30dp"
+                    android:id="@+id/edt_signup_sdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="VD: 0351298321"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày sinh:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="22sp" />
+                <EditText
+                    android:layout_marginHorizontal="30dp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:id="@+id/edt_signup_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="11/08/1998"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    />
+                <RadioGroup
+                    android:id="@+id/dialog_detail_gender"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:textColor="#000000"
+                        android:id="@+id/radio_signup_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:textSize="22sp"/>
+                    <RadioButton
+                        android:textColor="#000000"
+                        android:id="@+id/radio_signup_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Female"/>
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password:"
+                    android:textColor="#3c2f2f"
+                    android:textSize="22sp" />
+                <EditText
+                    android:layout_marginHorizontal="30dp"
+                    android:id="@+id/edt_signup_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    />
+                <Button
+                    android:textColor="#fff"
+                    android:background="@drawable/custom_button"
+                    android:paddingHorizontal="10dp"
+                    style="@style/Theme.Design.Light"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/btnSignup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:layout_marginLeft="50dp"
-                    android:text="Female"/>
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Password:"
-                android:textColor="#3c2f2f"
-                android:textSize="26sp" />
-            <EditText
-                android:layout_marginHorizontal="30dp"
-                android:id="@+id/edt_signup_pass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textSize="24sp"
-                android:layout_marginBottom="20dp"
-                />
-            <Button
-                android:textColor="#fff"
-                android:background="@drawable/custom_button"
-                android:padding="10dp"
-                style="@style/Theme.Design.Light"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/btnSignup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đăng ký"
-                android:textSize="26dp"
-                android:gravity="bottom"
-                />
-        </LinearLayout>
+                    android:text="Đăng ký"
+                    android:textSize="22dp"
+                    />
+            </LinearLayout>
         </ScrollView>
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

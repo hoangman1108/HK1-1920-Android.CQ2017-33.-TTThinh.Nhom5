@@ -14,14 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:theme="@style/SplashscreenTheme"
-            android:name=".SplashScreenActivity">
+            android:name=".SplashScreenActivity"
+            android:theme="@style/SplashscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DeleteMonActivity" />
+        <activity android:name=".HistoryActivity" />
         <activity android:name=".DoanhThuActivity" />
         <activity android:name=".AddMonActivity" />
         <activity android:name=".MenuActivity" />
@@ -46,8 +48,7 @@
 
         <uses-library android:name="com.google.android.maps" />
 
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

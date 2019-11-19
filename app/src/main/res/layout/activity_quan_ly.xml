@@ -68,6 +68,7 @@
 
     </LinearLayout>
     <Button
+        android:id="@+id/btn_quanly_dangxuat"
         android:textColor="#FFFEFE"
         android:padding="10dp"
         android:background="#F7324D"

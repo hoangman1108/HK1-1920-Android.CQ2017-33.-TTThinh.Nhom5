@@ -20,22 +20,18 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class BlankFragment extends Fragment implements OnMapReadyCallback {
 
 
     SupportMapFragment mapFragment;
     public BlankFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
         mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
         if(mapFragment == null){
@@ -52,7 +48,7 @@ public class BlankFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         GoogleMap mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker
         LatLng coffee1 = new LatLng(10.735570, 106.689339);
         mMap.addMarker(new MarkerOptions().position(coffee1).title("Coffee house branch 1"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coffee1));

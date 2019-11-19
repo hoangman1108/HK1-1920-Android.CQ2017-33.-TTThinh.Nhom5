@@ -72,6 +72,7 @@ public class GioHangFragment extends ListFragment{
                     RequestXacnhan requestXacnhan = new RequestXacnhan(MainActivity.userInforArrayList.get(MainActivity.index).getPhone(),"chờ...",getDateTime());
                     MainActivity.mData.child("RequestDonHang").push().setValue(requestXacnhan);
 
+//                    RequestActivity.DataRequest();
                     MainActivity.navigationView.setCheckedItem(R.id.itemGioHang);
                     Fragment fragment = new GioHangFragment();
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).show(fragment).commit();

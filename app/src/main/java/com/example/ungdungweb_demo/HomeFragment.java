@@ -49,14 +49,15 @@ public class HomeFragment extends Fragment {
 
 
 
-        imgbtAva.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(mainActivity, Detail_Info.class);
-                startActivity(intent);
-                mainActivity.finish();
-            }
-        });
+//        imgbtAva.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent intent = new Intent(mainActivity, LoginActivity.class);
+//                startActivity(intent);
+////                mainActivity.finish();
+//                mainActivity.finish();
+//            }
+//        });
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override

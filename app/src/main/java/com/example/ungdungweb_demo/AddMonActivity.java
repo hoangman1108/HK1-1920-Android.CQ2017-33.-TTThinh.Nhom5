@@ -30,8 +30,7 @@ public class AddMonActivity extends AppCompatActivity {
 
     int REQUEST_CODE_IMAGE = 1;
     int index;
-//    String key="LtdPVepUCWckzizg8S9";
-//    String keyMon ="";
+
     EditText Name, gia;
     ImageView anh;
     Button them;
@@ -66,6 +65,7 @@ public class AddMonActivity extends AppCompatActivity {
 
 
 
+
         final MonNuoc monN = QuanLy.monNuocArrayList.get(QuanLy.monNuocArrayList.size()-1);
         if(monN.getTenMon2() == null){
             index = 1;
@@ -90,22 +90,7 @@ public class AddMonActivity extends AppCompatActivity {
                 byte[] data = baos.toByteArray();
 
                 UploadTask uploadTask = mountainsRef.putBytes(data);
-//                uploadTask.addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception exception) {
-//                        Toast.makeText(AddMonActivity.this, "Lỗi!!", Toast.LENGTH_SHORT).show();
-//                    }
-//                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                    @Override
-//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//
-//                        Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-//                        while (!urlTask.isSuccessful());
-//                        Uri downloadUrl = urlTask.getResult();
-//                        urlSSS = downloadUrl.toString();
-//                        Log.d("ABCDAS",urlSSS);
-//                    }
-//                });
+
 
                 if(index == 0){
                     uploadTask.addOnFailureListener(new OnFailureListener() {
@@ -121,11 +106,10 @@ public class AddMonActivity extends AppCompatActivity {
                             while (!urlTask.isSuccessful());
                             Uri downloadUrl = urlTask.getResult();
                             urlSSS = downloadUrl.toString();
-                            Log.d("ABCDAS",urlSSS);
                             MonNuoc monNuoc = new MonNuoc(gia.getText().toString(),Name.getText().toString(),urlSSS);
                             QuanLy.mData.child("MonNuoc").push().setValue(monNuoc);
                             index =1;
-                            QuanLy.monNuocArrayList.add(monNuoc);
+//                            QuanLy.monNuocArrayList.add(monNuoc);
                             finish();
                         }
                     });
@@ -147,17 +131,12 @@ public class AddMonActivity extends AppCompatActivity {
                             while (!urlTask.isSuccessful());
                             Uri downloadUrl = urlTask.getResult();
                             urlSSS = downloadUrl.toString();
-                            Log.d("ABCDAS",urlSSS);
                             index =0;
                             MonNuoc monNuoc = new MonNuoc(mon.getGia1(),gia.getText().toString(),mon.getTenMon1(),Name.getText().toString(),mon.getHinh1(),urlSSS);
                             QuanLy.mData.child("MonNuoc").child(MenuActivity.arrIdMon.get(MenuActivity.arrIdMon.size()-1)).setValue(monNuoc);
-//                            QuanLy.monNuocArrayList.get(QuanLy.monNuocArrayList.size()-1).setGia2(monNuoc.getGia2());
-//                            QuanLy.monNuocArrayList.get(QuanLy.monNuocArrayList.size()-1).setTenMon2(monNuoc.getTenMon2());
-//                            QuanLy.monNuocArrayList.get(QuanLy.monNuocArrayList.size()-1).setHinh2(monNuoc.getHinh2());
                             QuanLy.monNuocArrayList.remove(QuanLy.monNuocArrayList.size()-1);
-                            MenuActivity.adapter.notifyDataSetChanged();
-                            QuanLy.monNuocArrayList.add(monNuoc);
-                            MenuActivity.adapter.notifyDataSetChanged();
+//                            QuanLy.monNuocArrayList.add(monNuoc);
+//                            MenuActivity.adapter.notifyDataSetChanged();
                             finish();
                         }
                     });

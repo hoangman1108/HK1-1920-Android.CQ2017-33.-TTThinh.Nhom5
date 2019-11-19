@@ -54,6 +54,7 @@ public class XacNhanDonHangFinal extends AppCompatActivity {
                 QuanLy.mData.child("RequestDonHang").child(MainActivity.keyRequest.get(Dem())).setValue(requestXacnhan);
                 Log.d("INDEX",Dem()+"");
                 Toast.makeText(XacNhanDonHangFinal.this, "xác nhận thành công", Toast.LENGTH_SHORT).show();
+                MainActivity.LoadKeyGioHang();
                 finish();
             }
         });

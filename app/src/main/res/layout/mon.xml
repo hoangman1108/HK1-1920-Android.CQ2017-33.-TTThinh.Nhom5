@@ -26,6 +26,10 @@
             android:text="Tên món nước..."
             android:textSize="24sp"/>
         <Button
+            android:layout_marginHorizontal="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#fff"
+            android:background="@drawable/custom_button"
             android:id="@+id/btnThemMon1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,6 +59,10 @@
             android:text="Tên món nước..."
             android:textSize="24sp"/>
         <Button
+            android:layout_marginHorizontal="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#fff"
+            android:background="@drawable/custom_button"
             android:id="@+id/btnThemMon2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

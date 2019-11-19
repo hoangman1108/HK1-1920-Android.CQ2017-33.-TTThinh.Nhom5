@@ -11,33 +11,26 @@
         android:layout_height="0dp"
         android:id="@+id/list_menu"/>
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-        <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
-            android:text="Thêm"
-            android:id="@+id/btn_menu_them"
-            android:textSize="24sp"/>
-        <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Xóa"
-            android:textAllCaps="false"
-            android:id="@+id/btn_menu_xoa"
-            android:textSize="24sp"/>
-        <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Sửa"
-            android:textAllCaps="false"
-            android:id="@+id/btn_menu_sua"
-            android:textSize="24sp"/>
-    </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <Button
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:textAllCaps="false"
+               android:layout_height="wrap_content"
+               android:text="Thêm món"
+               android:id="@+id/btn_menu_them"
+               android:textSize="24sp"/>
+           <Button
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:textAllCaps="false"
+               android:layout_height="wrap_content"
+               android:text="Xóa món"
+               android:id="@+id/btn_menu_xoa"
+               android:textSize="24sp"/>
+       </LinearLayout>
+
 </LinearLayout>
